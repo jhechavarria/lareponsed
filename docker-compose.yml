@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+    app:
+        image: node:latest
+        container_name: nuxt_app
+        ports:
+            - 82:80
+        volumes:
+        
+            - ./:/app
+        working_dir: /app
+        restart: always
+        command: "bash app.sh"
