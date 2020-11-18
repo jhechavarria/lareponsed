@@ -14,7 +14,7 @@
         </li>
         <li class="nav-item">
           <nuxt-link to="/feuilles" class="nav-link">
-            Feuille ed route
+            Feuille de route
           </nuxt-link>
         </li>
       </ul>

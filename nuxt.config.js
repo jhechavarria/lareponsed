@@ -28,7 +28,8 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800'},
-      { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css'}
+      { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css'},
+      { rel: 'stylesheet', href: 'https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.64.0/maps/maps.css'}
     ],
     bodyAttrs: {
       class: '' // Add `white-content` class here to enable "white" mode.
