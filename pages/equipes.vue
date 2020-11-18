@@ -6,7 +6,7 @@
     <div class="row">
       <div class="">
         <card>
-          <h4 slot="header" class="card-title">Equipes à prévoir pour Septembre</h4>
+          <h4 slot="header" class="card-title">Equipes à prévoir pour Décembre</h4>
           <h1>8</h1>
         </card>
       </div>
@@ -27,7 +27,7 @@
           <h4 slot="header" class="card-title">Info Equipes</h4>
           <base-alert type="info">
             <span>
-              <b>Info - </b> Equipe 12 à été affectées à l'itinéraire A0F - S37.
+              <b>Info - </b> Equipe 12 à été affectées à l'itinéraire A0F - S49.
             </span>
           </base-alert>
         </card>
@@ -38,7 +38,7 @@
     <div class="col-11">
       <div class="col">
         <card card-body-classes="table-fonction-width">
-          <h4 slot="header" class="card-title">Equipes affectées à la semaine 37</h4>
+          <h4 slot="header" class="card-title">Equipes affectées à la semaine 49</h4>
           <el-table :data="tableData2">
             <el-table-column
               sortable
