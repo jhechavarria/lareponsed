@@ -4,22 +4,28 @@
 
     </div>
     <div class="row">
-      <div class="col-4">
+      <div class="col-sm-6 col-md-3">
         <card>
-          <h4 slot="header" class="card-title">Remplissage de la benne</h4>
-          <h1>75%</h1>
+          <h4 slot="header" class="card-title text-center">Remplissage de la benne</h4>
+          <h1 align="center">75%</h1>
         </card>
       </div>
-      <div class="col-4">
+      <div class="col-sm-6 col-md-3">
         <card>
-          <h4 slot="header" class="card-title">Silos récupérés</h4>
-          <h1>3/5</h1>
+          <h4 slot="header" class="card-title text-center">Silos récupérés</h4>
+          <h1 align="center">3/5</h1>
         </card>
       </div>
-      <div class="col-4">
+      <div class="col-sm-6 col-md-3">
         <card>
-          <h4 slot="header" class="card-title">Trajet restant</h4>
-          <h1>3 Kilomètres</h1>
+          <h4 slot="header" class="card-title text-center">Trajet restant</h4>
+          <h1 align="center">3 Km</h1>
+        </card>
+      </div>
+      <div class="col-sm-6 col-md-3">
+        <card>
+          <h4 slot="header" class="card-title text-center">Durée estimée</h4>
+          <h1 align="center">30 min</h1>
         </card>
       </div>
     </div>

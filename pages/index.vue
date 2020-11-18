@@ -136,10 +136,10 @@
         </div>
       </card>
     </div> -->
-    <div class="col-lg-12">
+    <div class="col-lg-7">
       <card card-body-classes="table-full-width">
         <template slot="header">
-        <h4 class="card-title ml-n3 col-lg-5">Mouvements à prévoir pour les prochaines périodes</h4>
+        <h4 class="card-title ml-n3 col-lg-12">Tournées à prévoir pour les prochaines périodes</h4>
         <div class="d-flex ">
               <div
                 class="btn-group btn-group-toggle"
@@ -195,6 +195,28 @@
             header-align="right"
             label="Nombre"
             property="nb"
+          ></el-table-column>
+        </el-table>
+      </card>
+    </div>
+    <div class="col-lg-5">
+      <card card-body-classes="table-full-width">
+        <h4 slot="header" class="card-title">Variation des effectifs</h4>
+        <el-table :data="events">
+          <el-table-column
+            sortable
+            label="Date depart"
+            property="dateStart"
+          ></el-table-column>
+          <el-table-column
+            sortable
+            label="Date fin"
+            property="dateEnd"
+          ></el-table-column>
+          <el-table-column
+            sortable
+            label="Effectifs"
+            property="effectifs"
           ></el-table-column>
         </el-table>
       </card>
@@ -398,6 +420,45 @@ export default {
   },
   data () {
     return {
+
+      events: [
+        {
+          name: 'Toussaint',
+          dateStart: '17/10/2020',
+          dateEnd: '02/11/2020',
+          effectifs: '+2',
+        },
+        {
+          name: 'Halloween',
+          dateStart: '31/10/2020',
+          dateEnd: '01/11/2020',
+          effectifs: '+0',
+        },
+        {
+          name: 'Black Friday',
+          dateStart: '29/11/2020',
+          dateEnd: '01/12/2020',
+          effectifs: '+4',
+        },
+        {
+          name: 'Cyber Monday',
+          dateStart: '02/12/2020',
+          dateEnd: '03/12/2020',
+          effectifs: '+2',
+        },
+        {
+          name: 'Noel',
+          dateStart: '24/12/2020',
+          dateEnd: '26/12/2020',
+          effectifs: '+4',
+        },
+        {
+          name: 'Nouvel An',
+          dateStart: '30/12/2020',
+          dateEnd: '02/01/2021',
+          effectifs: '+5',
+        }
+      ],
       
     dataMvt: tableData[0],
 
