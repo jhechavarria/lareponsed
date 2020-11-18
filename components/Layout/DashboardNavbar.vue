@@ -61,24 +61,8 @@
           <i class="tim-icons icon-sound-wave"></i>
           <p class="d-lg-none">New Notifications</p>
         </template>
-        <li class="nav-link">
-          <a href="#" class="nav-item dropdown-item"
-            >Mike John responded to your email</a
-          >
-        </li>
-        <li class="nav-link">
-          <a href="#" class="nav-item dropdown-item">You have 5 more tasks</a>
-        </li>
-        <li class="nav-link">
-          <a href="#" class="nav-item dropdown-item"
-            >Your friend Michael is in town</a
-          >
-        </li>
-        <li class="nav-link">
-          <a href="#" class="nav-item dropdown-item">Another notification</a>
-        </li>
-        <li class="nav-link">
-          <a href="#" class="nav-item dropdown-item">Another one</a>
+        <li v-for="(notification, index) in notifications" :key="index" class="nav-link">
+          <nuxt-link to="/alertes" class="nav-item dropdown-item">{{ notification }}</nuxt-link>
         </li>
       </base-dropdown>
       <base-dropdown
@@ -138,7 +122,13 @@ export default {
       activeNotifications: false,
       showMenu: false,
       searchModalVisible: false,
-      searchQuery: ''
+      searchQuery: '',
+      notifications: [
+        "Camion E03 - Crevaison - En dépannage",
+        "Camion Large Hooper - Benne - HS",
+        "Ar01 - Compteur - Terminé",
+        "Ar07 - Surcharge - Pris en charge"
+      ]
     };
   },
   methods: {
@@ -156,6 +146,10 @@ export default {
     },
     toggleMenu() {
       this.showMenu = !this.showMenu;
+    },
+    logout() {
+      localStorage.set("credentials", null)
+      this.$router.push('/login')
     }
   }
 };

@@ -6,7 +6,7 @@
       :short-title="$t('sidebar.shortTitle')"
       :title="$t('sidebar.title')"
     >
-      <template  slot-scope="props" slot="links">
+      <template slot="links">
         <label class="ml-3 mb-n2 red">Agence</label>
         <sidebar-item
           :link="{
