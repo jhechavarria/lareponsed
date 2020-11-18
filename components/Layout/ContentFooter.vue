@@ -3,45 +3,27 @@
     <div class="container-fluid">
       <ul class="nav">
         <li class="nav-item">
-          <a
-            href="/"
-            target="_blank"
-            rel="noopener"
-            class="nav-link"
-          >
+          <nuxt-link to="/" class="nav-link">
             Glass Connect
-          </a>
+          </nuxt-link>
         </li>
         <li class="nav-item">
-          <a
-            href="/"
-            target="_blank"
-            rel="noopener"
-            class="nav-link"
-          >
-            About Us
-          </a>
+          <nuxt-link to="/alertes" class="nav-link">
+            Alertes
+          </nuxt-link>
         </li>
         <li class="nav-item">
-          <a
-            href="/"
-            target="_blank"
-            rel="noopener"
-            class="nav-link"
-          >
-            Blog
-          </a>
+          <nuxt-link to="/feuilles" class="nav-link">
+            Feuille ed route
+          </nuxt-link>
         </li>
       </ul>
       <div class="copyright">
         &copy; {{ year }}, made with <i class="tim-icons icon-heart-2"></i> by
         
-        <a
-          href="/"
-          target="_blank"
-          rel="noopener"
-          >Glass Connect</a
-        >
+        <nuxt-link to="/">
+          Glass Connect
+        </nuxt-link>
         for a better future.
       </div>
     </div>
