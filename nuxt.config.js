@@ -75,11 +75,15 @@ export default {
       {
         code: 'ar',
         file: 'ar.js'
+      },
+      {
+        code: 'fr',
+        file: 'fr.js'
       }
     ],
     lazy: true,
     langDir: 'lang/',
-    defaultLocale: 'en',
+    defaultLocale: 'fr',
   },
   /*
   ** Build configuration

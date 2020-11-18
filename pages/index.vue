@@ -6,10 +6,10 @@
         <template slot="header">
           <div class="row">
             <div class="col-sm-6" :class="isRTL ? 'text-right' : 'text-left'">
-              <h5 class="card-category">Total shipments</h5>
-              <h2 class="card-title">Performance</h2>
+              <h5 class="card-category">Quantité totale par secteur</h5>
+              <h2 class="card-title">Collectes</h2>
             </div>
-            <div class="col-sm-6 d-flex d-sm-block">
+            <!-- <div class="col-sm-6 d-flex d-sm-block">
               <div
                 class="btn-group btn-group-toggle"
                 :class="isRTL ? 'float-left' : 'float-right'"
@@ -19,15 +19,15 @@
                   v-for="(option, index) in bigLineChartCategories"
                   :key="option.name"
                   class="btn btn-sm btn-primary btn-simple"
-                  :class="{ active: bigLineChart.activeIndex === index }"
+                  :class="{ active: bigLineChart.activeIndex.includes(index) }"              
                   :id="index"
                 >
                   <input
                     type="radio"
-                    @click="initBigChart(index)"
+                    @click="() => {initCharts(index);} "
                     name="options"
                     autocomplete="off"
-                    :checked="bigLineChart.activeIndex === index"
+                    :checked="bigLineChart.activeIndex.includes(index)"
                   />
                   <span class="d-none d-sm-block">{{ option.name }}</span>
                   <span class="d-block d-sm-none">
@@ -35,7 +35,7 @@
                   </span>
                 </label>
               </div>
-            </div>
+            </div> -->
           </div>
         </template>
         <div class="chart-area">
@@ -57,14 +57,15 @@
     <div class="col-lg-4" :class="{ 'text-right': isRTL }">
       <card type="chart">
         <template slot="header">
-          <h5 class="card-category">Total Shipments</h5>
+          <h5 class="card-category">Effectif necéssaire par mois</h5>
           <h3 class="card-title">
-            <i class="tim-icons icon-bell-55 text-primary "></i> 763,215
+            <i class="text-primary "></i> Nombre de salariés
           </h3>
         </template>
         <div class="chart-area">
           <line-chart
             style="height: 100%"
+            ref="SalarieChart"
             :chart-data="purpleLineChart.chartData"
             :gradient-colors="purpleLineChart.gradientColors"
             :gradient-stops="purpleLineChart.gradientStops"
@@ -183,9 +184,52 @@ let bigChartData = [
   [80, 120, 105, 110, 95, 105, 90, 100, 80, 95, 70, 120],
   [60, 80, 65, 130, 80, 105, 90, 130, 70, 115, 60, 130]
 ]
-let bigChartLabels = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC']
-let bigChartDatasetOptions = {
-  fill: true,
+
+let SalarieChartData = [
+  [5, 4, 9, 16, 12, 10],
+  [6, 5, 8, 14, 13, 7],
+  [7, 8, 5, 13, 12, 9]
+]
+
+let bigChartLabels = ['JAN', 'FEV', 'MAR', 'AVR', 'MAI', 'JUIN', 'JUIL', 'AOUT', 'SEP', 'OCT', 'NOV', 'DEC']
+
+let bigChartDatasetOptions0 = {
+  label: "Secteur 1",
+  fill: false,
+  borderColor: "red",
+  borderWidth: 2,
+  borderDash: [],
+  borderDashOffset: 0.0,
+  pointBackgroundColor: config.colors.primary,
+  pointBorderColor: 'rgba(255,255,255,0)',
+  pointHoverBackgroundColor: config.colors.primary,
+  pointBorderWidth: 20,
+  pointHoverRadius: 4,
+  pointHoverBorderWidth: 15,
+  pointRadius: 4,
+}
+
+
+let bigChartDatasetOptions1 = {
+  label: "Secteur 2",
+  fill: false,
+  borderColor: "blue",
+  borderWidth: 2,
+  borderDash: [],
+  borderDashOffset: 0.0,
+  pointBackgroundColor: config.colors.primary,
+  pointBorderColor: 'rgba(255,255,255,0)',
+  pointHoverBackgroundColor: config.colors.primary,
+  pointBorderWidth: 20,
+  pointHoverRadius: 4,
+  pointHoverBorderWidth: 15,
+  pointRadius: 4,
+}
+
+
+let bigChartDatasetOptions2 = {
+  label: "Secteur 3",
+  fill: false,
   borderColor: config.colors.primary,
   borderWidth: 2,
   borderDash: [],
@@ -247,13 +291,20 @@ export default {
           city: 'Feldkirchen in Kärnten'
         }
       ],
+
+
+
       bigLineChart: {
-        activeIndex: 0,
+        activeIndex: [0,1,2],
         chartData: {
           datasets: [{
-            ...bigChartDatasetOptions,
+            ...bigChartDatasetOptions0,
             data: bigChartData[0]
-          }],
+          },
+          { ...bigChartDatasetOptions1,
+            data: bigChartData[1]},
+          { ...bigChartDatasetOptions2,
+            data: bigChartData[2]}],
           labels: bigChartLabels
         },
         extraOptions: chartConfigs.purpleChartOptions,
@@ -262,12 +313,12 @@ export default {
         categories: []
       },
       purpleLineChart: {
-        extraOptions: chartConfigs.purpleChartOptions,
+        extraOptions: chartConfigs.SalarieChartOptions,
         chartData: {
-          labels: ['JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
+          labels: ['JUIL', 'AOUT', 'SEP', 'OCT', 'NOV', 'DEC'],
           datasets: [
             {
-              label: 'Data',
+              label: 'Nombre Salariés',
               fill: true,
               borderColor: config.colors.primary,
               borderWidth: 2,
@@ -280,7 +331,7 @@ export default {
               pointHoverRadius: 4,
               pointHoverBorderWidth: 15,
               pointRadius: 4,
-              data: [80, 100, 70, 80, 120, 80]
+              data: [5, 4, 9, 16, 12, 10]
             }
           ]
         },
@@ -290,7 +341,7 @@ export default {
       greenLineChart: {
         extraOptions: chartConfigs.greenChartOptions,
         chartData: {
-          labels: ['JUL', 'AUG', 'SEP', 'OCT', 'NOV'],
+          labels: ['JUIL', 'AOUT', 'SEP', 'OCT', 'NOV'],
           datasets: [
             {
               label: 'My First dataset',
@@ -346,28 +397,97 @@ export default {
       return this.$rtl.isRTL;
     },
     bigLineChartCategories () {
-      return [{ name: 'Accounts', icon: 'tim-icons icon-single-02' }, {
-        name: 'Purchases',
+      return [{ name: 'Secteur 1', icon: 'tim-icons icon-single-02' }, {
+        name: 'Secteur 2',
         icon: 'tim-icons icon-gift-2'
-      }, { name: 'Sessions', icon: 'tim-icons icon-tap-02' }];
+      }, { name: 'Secteur 3', icon: 'tim-icons icon-tap-02' }];
     }
   },
   methods: {
-    initBigChart (index) {
+    initCharts (index) {
+
+      
+
+
+      let indexOf = this.bigLineChart.activeIndex.indexOf(index);
+
+      if(indexOf > -1){
+        if(this.bigLineChart.activeIndex.length > 1)
+        this.bigLineChart.activeIndex.splice(indexOf, 1);
+      }
+      else{
+        this.bigLineChart.activeIndex.push(index);
+      }
+
+      let datasets = [
+    {
+      ...bigChartDatasetOptions,
+      data: bigChartData[0]
+    },
+    {
+      ...bigChartDatasetOptions,
+      data: bigChartData[1]
+    },
+    {
+      ...bigChartDatasetOptions,
+      data: bigChartData[index]
+    }
+  ]
+
+      // let datasets = []
+
+      // this.bigLineChart.activeIndex.forEach((valeur, index) => {
+      //   datasets.push({
+      //     ...bigChartDatasetOptions,
+      //     data: bigChartData[valeur],
+      //   })
+      // })
+      
       let chartData = {
-        datasets: [{
-          ...bigChartDatasetOptions,
-          data: bigChartData[index]
-        }],
+        datasets,
         labels: bigChartLabels
       };
+      
       this.$refs.bigChart.updateGradients(chartData);
       this.bigLineChart.chartData = chartData;
-      this.bigLineChart.activeIndex = index;
-    }
+
+      
+
+
+      //  let chartData = {
+      //   datasets: [{
+      //     ...bigChartDatasetOptions,
+      //     data: bigChartData[index]
+      //   }],
+      //   labels: bigChartLabels
+      // };
+
+
+      let SalariechartData = {
+              datasets: [{
+              label: 'Nombre Salariés',
+              fill: true,
+              borderColor: config.colors.primary,
+              borderWidth: 2,
+              borderDash: [],
+              borderDashOffset: 0.0,
+              pointBackgroundColor: config.colors.primary,
+              pointBorderColor: 'rgba(255,255,255,0)',
+              pointHoverBackgroundColor: config.colors.primary,
+              pointBorderWidth: 20,
+              pointHoverRadius: 4,
+              pointHoverBorderWidth: 15,
+              pointRadius: 4,
+                data: SalarieChartData[index]
+              }],
+            };
+            this.$refs.SalarieChart.updateGradients(SalariechartData);
+            this.purpleLineChart.chartData = SalariechartData;
+
+          }
   },
   mounted () {
-    this.initBigChart(0);
+    // this.initCharts(0);  
   }
 }
 </script>

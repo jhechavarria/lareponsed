@@ -6,28 +6,13 @@
       :short-title="$t('sidebar.shortTitle')"
       :title="$t('sidebar.title')"
     >
-      <template slot-scope="props" slot="links">
+      <template  slot-scope="props" slot="links">
+        <label class="ml-3 mb-n2 red">Agence</label>
         <sidebar-item
           :link="{
             name: $t('sidebar.dashboard'),
             icon: 'tim-icons icon-chart-pie-36',
             path: '/'
-          }"
-        >
-        </sidebar-item>
-        <sidebar-item
-          :link="{
-            name: $t('sidebar.icons'),
-            icon: 'tim-icons icon-atom',
-            path: '/icons'
-          }"
-        >
-        </sidebar-item>
-        <sidebar-item
-          :link="{
-            name: $t('sidebar.maps'),
-            icon: 'tim-icons icon-pin',
-            path: '/google'
           }"
         >
         </sidebar-item>
@@ -41,15 +26,9 @@
         >
         </sidebar-item>
 
-        <sidebar-item
-          :link="{
-            name: $t('sidebar.userProfile'),
-            icon: 'tim-icons icon-single-02',
-            path: '/user' }"
-        >
-        </sidebar-item>
+      <label class="ml-3 mt-2 mb-n2 red">Equipe</label>
 
-        <sidebar-item
+         <sidebar-item
           :link="{
             name: $t('sidebar.regularTables'),
             icon: 'tim-icons icon-puzzle-10',
@@ -59,25 +38,31 @@
 
         <sidebar-item
           :link="{
-            name: $t('sidebar.typography'),
-            icon: 'tim-icons icon-align-center',
-            path: '/typography'
+            name: $t('sidebar.maps'),
+            icon: 'tim-icons icon-pin',
+            path: '/google'
           }"
-        ></sidebar-item>
+        >
+        </sidebar-item>
+
+         <label class="ml-3 mt-2 mb-n2 red">Utilisateur</label>
 
         <sidebar-item
           :link="{
-            name: $t('sidebar.rtl'),
-            icon: 'tim-icons icon-world',
-            path: localePath('/rtl', 'ar') }"
-        ></sidebar-item>
+            name: $t('sidebar.userProfile'),
+            icon: 'tim-icons icon-single-02',
+            path: '/user' }"
+        >
+        </sidebar-item>
 
-        <li class="active-pro">
+
+
+        <!-- <li class="active-pro">
           <a href="https://www.creative-tim.com/product/nuxt-black-dashboard-pro" target="_blank">
             <i class="tim-icons icon-spaceship"></i>
             <p>Upgrade to PRO</p>
           </a>
-        </li>
+        </li> -->
       </template>
     </side-bar>
     <!--Share plugin (for demo purposes). You can remove it if don't plan on using it-->
