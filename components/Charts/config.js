@@ -27,8 +27,9 @@ export let blueChartOptions = {
           zeroLineColor: 'transparent'
         },
         ticks: {
-          suggestedMin: 60,
-          suggestedMax: 125,
+          beginAtZero: true,
+          suggestedMin: 0,
+          suggestedMax: 160,
           padding: 20,
           fontColor: '#2380f7'
         }
@@ -76,7 +77,7 @@ export let lineChartOptionsBlue = {
         },
         ticks: {
           suggestedMin: 60,
-          suggestedMax: 125,
+          suggestedMax: 160,
           padding: 20,
           fontColor: '#9e9e9e'
         }
@@ -407,9 +408,13 @@ export let barChartOptions = {
           color: 'rgba(29,140,248,0.1)',
           zeroLineColor: 'transparent'
         },
+        scaleLabel: {
+          display: true,
+          labelString: 'Tonnes'
+        },
         ticks: {
-          suggestedMin: 60,
-          suggestedMax: 120,
+          suggestedMin: 0,
+          suggestedMax: 160,
           padding: 20,
           fontColor: '#9e9e9e'
         }
