@@ -16,7 +16,7 @@
           <span class="navbar-toggler-bar bar3"></span>
         </button>
       </div>
-      <a class="navbar-brand ml-xl-3 ml-5" href="#pablo">{{ routeName }}</a>
+      <a class="navbar-brand ml-xl-3 ml-5" href="/">Glass Connect</a>
     </div>
 
     <ul class="navbar-nav" :class="$rtl.isRTL ? 'mr-auto' : 'ml-auto'">
@@ -61,24 +61,8 @@
           <i class="tim-icons icon-sound-wave"></i>
           <p class="d-lg-none">New Notifications</p>
         </template>
-        <li class="nav-link">
-          <a href="#" class="nav-item dropdown-item"
-            >Mike John responded to your email</a
-          >
-        </li>
-        <li class="nav-link">
-          <a href="#" class="nav-item dropdown-item">You have 5 more tasks</a>
-        </li>
-        <li class="nav-link">
-          <a href="#" class="nav-item dropdown-item"
-            >Your friend Michael is in town</a
-          >
-        </li>
-        <li class="nav-link">
-          <a href="#" class="nav-item dropdown-item">Another notification</a>
-        </li>
-        <li class="nav-link">
-          <a href="#" class="nav-item dropdown-item">Another one</a>
+        <li v-for="(notification, index) in notifications" :key="index" class="nav-link">
+          <nuxt-link to="/alertes" class="nav-item dropdown-item">{{ notification }}</nuxt-link>
         </li>
       </base-dropdown>
       <base-dropdown
@@ -92,19 +76,19 @@
         <template
           slot="title"
         >
-          <div class="photo"><img src="img/mike.jpg" /></div>
+          <div class="photo"><img src="img/logo.png" /></div>
           <b class="caret d-none d-lg-block d-xl-block"></b>
           <p class="d-lg-none">Log out</p>
         </template>
         <li class="nav-link">
-          <a href="#" class="nav-item dropdown-item">Profile</a>
+          <a href="/user" class="nav-item dropdown-item">Profil</a>
         </li>
         <li class="nav-link">
-          <a href="#" class="nav-item dropdown-item">Settings</a>
+          <a href="#" class="nav-item dropdown-item">Paramètres</a>
         </li>
         <div class="dropdown-divider"></div>
         <li class="nav-link">
-          <a href="#" class="nav-item dropdown-item">Log out</a>
+          <a href="#" class="nav-item dropdown-item">Se Déconnecter</a>
         </li>
       </base-dropdown>
     </ul>
@@ -125,7 +109,7 @@ export default {
       const { path } = this.$route;
       let parts = path.split('/')
       if(parts == ','){
-        return 'Dashboard';
+        return 'Tableau de Bord';
       }
       return parts.map(p => this.capitalizeFirstLetter(p)).join(' ');
     },
@@ -138,7 +122,13 @@ export default {
       activeNotifications: false,
       showMenu: false,
       searchModalVisible: false,
-      searchQuery: ''
+      searchQuery: '',
+      notifications: [
+        "Camion E03 - Crevaison - En dépannage",
+        "Camion Large Hooper - Benne - HS",
+        "Ar01 - Compteur - Terminé",
+        "Ar07 - Surcharge - Pris en charge"
+      ]
     };
   },
   methods: {
@@ -156,6 +146,10 @@ export default {
     },
     toggleMenu() {
       this.showMenu = !this.showMenu;
+    },
+    logout() {
+      localStorage.set("credentials", null)
+      this.$router.push('/login')
     }
   }
 };
