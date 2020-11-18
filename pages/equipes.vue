@@ -6,63 +6,39 @@
     <div class="row">
       <div class="">
         <card>
-          <h4 slot="header" class="card-title">Personnel affecté au travail</h4>
-          <h1>19</h1>
+          <h4 slot="header" class="card-title">Equipes à prévoir pour Septembre</h4>
+          <h1>8</h1>
         </card>
       </div>
       <div class="col-2">
         <card>
-          <h4 slot="header" class="card-title">Equipes en déploiement</h4>
-          <h1>7</h1>
+          <h4 slot="header" class="card-title">Nombre de chauffeurs</h4>
+          <h1>8</h1>
         </card>
       </div>
       <div class="">
         <card>
-          <h4 slot="header" class="card-title">Personnel non affecté</h4>
-          <h1>6</h1>
+          <h4 slot="header" class="card-title">nombre d'agents</h4>
+          <h1>24</h1>
         </card>
       </div>
       <div class="col-6">
         <card>
-          <h4 slot="header" class="card-title">Actu Equipes</h4>
-          <base-alert type="success">
-            <span>
-              <b>Info - </b> Equipe 04 à terminé sa tournée.
-            </span>
-          </base-alert>
+          <h4 slot="header" class="card-title">Info Equipes</h4>
           <base-alert type="info">
             <span>
-              <b>Info - </b> Equipe 01 à commencé sa tournée.
+              <b>Info - </b> Equipe 12 à été affectées à l'itinéraire A0F - S37.
             </span>
           </base-alert>
         </card>
       </div>
     </div>
 
-    <div class="row">
-    <div class="col-4">
+    
+    <div class="col-11">
       <div class="col">
         <card card-body-classes="table-fonction-width">
-          <h4 slot="header" class="card-title">Equipes à disposition</h4>
-          <el-table :data="tableData">
-            <el-table-column
-              sortable
-              label="Nom"
-              property="name"
-            ></el-table-column>
-            <el-table-column
-              sortable
-              label="Fonction"
-              property="fonction"
-            ></el-table-column>
-          </el-table>
-        </card>
-      </div>
-    </div>
-    <div class="col-7">
-      <div class="col">
-        <card card-body-classes="table-fonction-width">
-          <h4 slot="header" class="card-title">Equipes affectées</h4>
+          <h4 slot="header" class="card-title">Equipes affectées à la semaine 37</h4>
           <el-table :data="tableData2">
             <el-table-column
               sortable
@@ -89,14 +65,16 @@
               label="Itinéraire"
               property="address"
             ></el-table-column>
+            <el-table-column
+              sortable
+              label="Secteur"
+              property="secteur"
+            ></el-table-column>
           </el-table>
         </card>
       </div>
     </div>
     </div>
-
-    
-  </div>
 </template>
 
 <script>
@@ -156,51 +134,58 @@ export default {
       tableData2: [
         {
           equipe: '12',
-          name: 'Arlette Descoteaux',
+          name: 'Arlette Descoteau',
           address: 'A0F',
           fonction: 'Chauffeur',
-          done: 'CL 34'
+          done: 'CL 34',
+          secteur : '1'
         },
         {
           equipe : '20',
           name: 'José Correia',
           address: '00F',
           fonction: 'Agent de terrain',
-          done: 'CB 02'
+          done: 'CB 02',
+          secteur : '2'
         },
         {
           equipe: '12',
           name: 'Luca Saenger',
           address: 'A0F',
           fonction: 'Chauffeur',
-          done: 'CL 34'
+          done: 'CL 34',
+          secteur : '1'
         },
         {equipe : '01',
           name: 'Ulrich Frueh',
           address: '04B',
-          fonction: 'Chauffeur%',
-          done: 'CL 12'
+          fonction: 'Chauffeur',
+          done: 'CL 12',
+          secteur : '3'
         },
         {
           equipe: '13',
           name: 'Adrienne Norbert',
           address: '12A',
           fonction: 'Agent de terrain',
-          done: 'CB'
+          done: 'CB',
+          secteur : '2'
         },
         {
           equipe: '13',
           name: 'Jiao Chang',
           address: '12A',
           fonction: 'Agent de terrain',
-          done: 'CB'
+          done: 'CB',
+          secteur : '2'
         },
         {
           equipe: '13',
           name: 'Farhah Hajjar',
           address: '12A',
           fonction: 'Agent de terrain',
-          done: 'CB'
+          done: 'CB',
+          secteur : '2'
         },
       ]
     };
