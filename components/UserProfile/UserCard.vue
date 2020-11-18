@@ -8,15 +8,13 @@
       <div class="block block-four"></div>
       <a href="javascript:void(0)">
         <img class="avatar" src="img/emilyz.jpg" alt="..." />
-        <h5 class="title">Mike Andrew</h5>
+        <h5 class="title">Alice PETIT</h5>
       </a>
-      <p class="description">Ceo/Co-Founder</p>
+      <p class="description">Co-Fondatrice</p>
     </div>
     <p></p>
     <div class="card-description">
-      Do not be scared of the truth because we need to restart the human
-      foundation in truth And I love you like Kanye loves Kanye I love Rick
-      Owens’ bed design but the back is...
+      Mieux vaut prendre le changement par la main avant qu'il ne nous prenne par la gorge
     </div>
 
     <div slot="footer" class="button-container">
