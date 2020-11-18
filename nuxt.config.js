@@ -107,5 +107,24 @@ export default {
         ]
       ]
     }
+  },
+  /**
+   * PWA
+   */
+  pwa: {
+    manifest: {
+      name: 'Gassify',
+      short_name : 'Gassify',
+      description : "L'IA au service de la ville",
+      lang: 'fr',
+      dir: 'ltr',
+      start_url : 'https://lrd.shelltopia.fr/',
+      useWebmanifestExtension: false,
+    },
+    icon: {
+      source: '@/static/',
+      targetDir: '@/static',
+      fileName: 'icon.png',
+    }
   }
 }
