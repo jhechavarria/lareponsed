@@ -28,17 +28,6 @@
             <span class="label-switch label-right">Mode sombre</span>
           </div>
         </li>
-
-        <li class="button-container mt-4">
-          <a
-            href="https://www.creative-tim.com/learning-lab/nuxt/overview/black-dashboard"
-            target="_blank"
-            rel="noopener"
-            class="btn btn-default btn-block btn-round"
-          >
-            Documentation
-          </a>
-        </li>
       </ul>
     </div>
   </div>

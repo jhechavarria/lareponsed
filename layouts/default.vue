@@ -31,7 +31,7 @@
          <sidebar-item
           :link="{
             name: $t('sidebar.regularTables'),
-            icon: 'tim-icons icon-puzzle-10',
+            icon: 'tim-icons icon-delivery-fast',
             path: '/feuilles'
           }"
         ></sidebar-item>
@@ -39,7 +39,7 @@
         <sidebar-item
           :link="{
             name: $t('sidebar.maps'),
-            icon: 'tim-icons icon-pin',
+            icon: 'tim-icons icon-square-pin',
             path: '/google'
           }"
         >
