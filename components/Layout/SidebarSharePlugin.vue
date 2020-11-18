@@ -28,6 +28,7 @@
             <span class="label-switch label-right">Mode sombre</span>
           </div>
         </li>
+        <li></li>
       </ul>
     </div>
   </div>
