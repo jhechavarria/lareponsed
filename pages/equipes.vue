@@ -75,9 +75,6 @@
       </div>
     </div>
     </div>
-
-    
-  </div>
 </template>
 
 <script>
@@ -162,7 +159,7 @@ export default {
         {equipe : '01',
           name: 'Ulrich Frueh',
           address: '04B',
-          fonction: 'Chauffeur%',
+          fonction: 'Chauffeur',
           done: 'CL 12',
           secteur : '3'
         },
@@ -188,7 +185,7 @@ export default {
           address: '12A',
           fonction: 'Agent de terrain',
           done: 'CB',
-          secteur : '1'
+          secteur : '2'
         },
       ]
     };
