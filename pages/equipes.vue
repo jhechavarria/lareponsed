@@ -7,19 +7,19 @@
       <div class="">
         <card>
           <h4 slot="header" class="card-title">Equipes à prévoir pour Septembre</h4>
-          <h1>7</h1>
+          <h1>8</h1>
         </card>
       </div>
       <div class="col-2">
         <card>
           <h4 slot="header" class="card-title">Nombre de chauffeurs</h4>
-          <h1>7</h1>
+          <h1>8</h1>
         </card>
       </div>
       <div class="">
         <card>
           <h4 slot="header" class="card-title">nombre d'agents</h4>
-          <h1>21</h1>
+          <h1>24</h1>
         </card>
       </div>
       <div class="col-6">
