@@ -28,6 +28,14 @@
 
       <label class="ml-3 mt-2 mb-n2 red">Equipe</label>
 
+        <sidebar-item
+          :link="{
+            name: $t('sidebar.teams'),
+            icon: 'tim-icons icon-bullet-list-67',
+            path: '/equipes'
+          }"
+        ></sidebar-item>
+
          <sidebar-item
           :link="{
             name: $t('sidebar.regularTables'),
