@@ -16,7 +16,7 @@
           <span class="navbar-toggler-bar bar3"></span>
         </button>
       </div>
-      <nuxt-link class="navbar-brand ml-xl-3 ml-5" to="/">Glass Connect</nuxt-link>
+      <nuxt-link class="navbar-brand ml-xl-3 ml-5" to="/">Glassify</nuxt-link>
     </div>
 
     <ul class="navbar-nav" :class="$rtl.isRTL ? 'mr-auto' : 'ml-auto'">
