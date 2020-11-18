@@ -119,7 +119,7 @@ export default {
   data() {
     return {
       user: {
-        company: 'Glassify',
+        company: 'Glass Connect',
         username: 'alice26',
         email: 'alice.petit@vitrhone.fr',
         firstName: 'Alice',
@@ -128,7 +128,7 @@ export default {
         city: 'Lyon',
         country: 'France',
         postalCode: '69000',
-        aboutMe: `Co-fondatrice & spécialite IA`
+        aboutMe: `Co-fondatrice & spécialiste IA`
       }
     };
   },
