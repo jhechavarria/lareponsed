@@ -21,7 +21,7 @@
           :link="{
             name: $t('sidebar.notifications'),
             icon: 'tim-icons icon-bell-55',
-            path: '/notifications'
+            path: '/alertes'
           }"
         >
         </sidebar-item>
@@ -32,7 +32,7 @@
           :link="{
             name: $t('sidebar.regularTables'),
             icon: 'tim-icons icon-puzzle-10',
-            path: '/regular'
+            path: '/feuilles'
           }"
         ></sidebar-item>
 
