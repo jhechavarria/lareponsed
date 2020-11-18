@@ -54,7 +54,7 @@
 
 
     <!-- Small charts -->
-    <div class="col-lg-4" :class="{ 'text-right': isRTL }">
+    <div class="col-lg-6" :class="{ 'text-right': isRTL }">
       <card type="chart">
         <template slot="header">
           <h5 class="card-category">Effectif necéssaire par mois</h5>
@@ -75,12 +75,12 @@
         </div>
       </card>
     </div>
-    <div class="col-lg-4" :class="{ 'text-right': isRTL }">
+    <div class="col-lg-6" :class="{ 'text-right': isRTL }">
       <card type="chart">
         <template slot="header">
-          <h5 class="card-category">Daily Sales</h5>
+          <h5 class="card-category">Prédictions</h5>
           <h3 class="card-title">
-            <i class="tim-icons icon-delivery-fast text-info "></i> 3,500€
+            <i class="tim-icons icon-delivery-fast text-info "></i> Collecte prévue pour le mois prochain
           </h3>
         </template>
         <div class="chart-area">
@@ -94,7 +94,7 @@
         </div>
       </card>
     </div>
-    <div class="col-lg-4" :class="{ 'text-right': isRTL }">
+    <!-- <div class="col-lg-4" :class="{ 'text-right': isRTL }">
       <card type="chart">
         <template slot="header">
           <h5 class="card-category">Completed tasks</h5>
@@ -112,8 +112,8 @@
           </line-chart>
         </div>
       </card>
-    </div>
-    <div class="col-lg-5">
+    </div> -->
+    <!-- <div class="col-lg-5">
       <card type="tasks" :header-classes="{ 'text-right': isRTL }">
         <template slot="header" class="d-inline">
           <h6 class="title d-inline">Tasks (5)</h6>
@@ -135,36 +135,66 @@
           <task-list></task-list>
         </div>
       </card>
-    </div>
-    <div class="col-lg-7">
+    </div> -->
+    <div class="col-lg-12">
       <card card-body-classes="table-full-width">
-        <h4 slot="header" class="card-title">Striped table</h4>
-        <el-table :data="tableData">
+        <template slot="header">
+        <h4 class="card-title ml-n3 col-lg-5">Mouvements à prévoir pour les prochaines périodes</h4>
+        <div class="d-flex ">
+              <div
+                class="btn-group btn-group-toggle"
+                :class="isRTL ? 'float-left' : 'float-right'"
+                data-toggle="buttons"
+              >
+                <label
+                  v-for="(option, index) in bigLineChartCategories"
+                  :key="option.name"
+                  class="btn btn-sm btn-success btn-simple"
+                  :class="{ active: activePeriode === index}"              
+                  :id="index"
+                >
+                  <input
+                    type="radio"
+                    @click="() => { loadTable(index)} "
+                    name="options"
+                    autocomplete="off"
+                    :checked="activePeriode === index"
+                  />
+                  <span class="d-none d-sm-block">{{ option.name }}</span>
+                  <span class="d-block d-sm-none">
+                    <i :class="option.icon"></i>
+                  </span>
+                </label>
+              </div>
+            </div>
+        </template>
+        <el-table  ref="TableMouvements" 
+                  :data="dataMvt">
           <el-table-column
             min-width="150"
             sortable
-            label="Name"
-            property="name"
+            label="Secteur Origine"
+            property="secteurO"
           ></el-table-column>
           <el-table-column
             min-width="150"
             sortable
-            label="Country"
-            property="country"
+            label="Secteur Destination"
+            property="secteurD"
           ></el-table-column>
           <el-table-column
             min-width="150"
             sortable
-            label="City"
-            property="city"
-          ></el-table-column>
+            label="Type"
+            property="type"
+          ></el-table-column>       
           <el-table-column
             min-width="150"
             sortable
             align="right"
             header-align="right"
-            label="Salary"
-            property="salary"
+            label="Nombre"
+            property="nb"
           ></el-table-column>
         </el-table>
       </card>
@@ -185,11 +215,22 @@ let bigChartData = [
   [60, 80, 65, 130, 80, 105, 90, 130, 70, 115, 60, 130]
 ]
 
-let SalarieChartData = [
-  [5, 4, 9, 16, 12, 10],
-  [6, 5, 8, 14, 13, 7],
-  [7, 8, 5, 13, 12, 9]
-]
+let SalarieChartData = [[],[],[]]
+
+bigChartData.forEach((set, index) => {
+  set.forEach((valueSet, indexSet) => {
+    if(indexSet > 5){
+      let newValue = Math.trunc(valueSet / 10)
+      SalarieChartData[index].push(newValue)
+  }
+  }) 
+})
+
+// let SalarieChartData = [
+//   [5, 4, 9, 16, 12, 10],
+//   [6, 5, 8, 14, 13, 7],
+//   [7, 8, 5, 13, 12, 9]
+// ]
 
 let bigChartLabels = ['JAN', 'FEV', 'MAR', 'AVR', 'MAI', 'JUIN', 'JUIL', 'AOUT', 'SEP', 'OCT', 'NOV', 'DEC']
 
@@ -243,6 +284,109 @@ let bigChartDatasetOptions2 = {
   pointRadius: 4,
 }
 
+let tableData = [
+        [
+        {
+          id: 1,
+          secteurO: 'Secteur 1',
+          secteurD: 'Secteur 3',
+          type: 'Effectif',
+          nb: '1'
+        }
+      ],
+        [
+        {
+          id: 1,
+          secteurO: 'Secteur 2',
+          secteurD: 'Secteur 3',
+          type: 'Benne 40T',
+          nb: '1'
+        },
+        {
+          id: 2,
+          secteurO: 'Secteur 3',
+          secteurD: 'Secteur 1',
+          type: 'Effectif',
+          nb: '2'
+        },
+        {
+          id: 3,
+         secteurO: 'Secteur 2',
+          secteurD: 'Secteur 3',
+          type: 'Benne 30T',
+          nb: '1'
+        },
+        {
+          id: 4,
+          secteurO: 'Secteur 3',
+          secteurD: 'Secteur 1',
+          type: 'Benne 40T',
+          nb: '1'
+        },
+        {
+          id: 5,
+          secteurO: 'Secteur 3',
+          secteurD: 'Secteur 2',
+          type: 'Effectif',
+          nb: '3'
+        }  
+      ],
+       [
+        {
+          id: 1,
+          secteurO: 'Secteur 2',
+          secteurD: 'Secteur 3',
+          type: 'Effectif',
+          nb: '4'
+        },
+        {
+          id: 2,
+          secteurO: 'Secteur 2',
+          secteurD: 'Secteur 3',
+          type: 'Benne 40T',
+          nb: '1'
+        },
+        {
+          id: 3,
+          secteurO: 'Secteur 1',
+          secteurD: 'Secteur 2',
+          type: 'Effectif',
+          nb: '1'
+        }     
+      ],
+       [
+        {
+          id: 1,
+          secteurO: 'Secteur 1',
+          secteurD: 'Secteur 3',
+          type: 'Effectif',
+          nb: '1'
+        },
+        {
+          id: 2,
+          secteurO: 'Secteur 2',
+          secteurD: 'Secteur 3',
+          type: 'Benne 40T',
+          nb: '1'
+        },
+        {
+          id: 3,
+          secteurO: 'Secteur 2',
+          secteurD: 'Secteur 1',
+          type: 'Benne 30T',
+          nb: '1'
+        },
+        {
+          id: 4,
+          secteurO: 'Secteur 2',
+          secteurD: 'Secteur 3',
+          type: 'Effectif',
+          nb: '2'
+        }
+      ]      
+      ]
+
+
 export default {
   name: 'dashboard',
   components: {
@@ -254,45 +398,10 @@ export default {
   },
   data () {
     return {
-      tableData: [
-        {
-          id: 1,
-          name: 'Dakota Rice',
-          salary: '$36.738',
-          country: 'Niger',
-          city: 'Oud-Turnhout'
-        },
-        {
-          id: 2,
-          name: 'Minerva Hooper',
-          salary: '$23,789',
-          country: 'Curaçao',
-          city: 'Sinaai-Waas'
-        },
-        {
-          id: 3,
-          name: 'Sage Rodriguez',
-          salary: '$56,142',
-          country: 'Netherlands',
-          city: 'Baileux'
-        },
-        {
-          id: 4,
-          name: 'Philip Chaney',
-          salary: '$38,735',
-          country: 'Korea, South',
-          city: 'Overland Park'
-        },
-        {
-          id: 5,
-          name: 'Doris Greene',
-          salary: '$63,542',
-          country: 'Malawi',
-          city: 'Feldkirchen in Kärnten'
-        }
-      ],
+      
+    dataMvt: tableData[0],
 
-
+    activePeriode: 0,
 
       bigLineChart: {
         activeIndex: [0,1,2],
@@ -318,8 +427,40 @@ export default {
           labels: ['JUIL', 'AOUT', 'SEP', 'OCT', 'NOV', 'DEC'],
           datasets: [
             {
-              label: 'Nombre Salariés',
-              fill: true,
+              label: 'Secteur 1',
+              fill: false,
+              borderColor: "red",
+              borderWidth: 2,
+              borderDash: [],
+              borderDashOffset: 0.0,
+              pointBackgroundColor: config.colors.primary,
+              pointBorderColor: 'rgba(255,255,255,0)',
+              pointHoverBackgroundColor: config.colors.primary,
+              pointBorderWidth: 20,
+              pointHoverRadius: 4,
+              pointHoverBorderWidth: 15,
+              pointRadius: 4,
+              data: SalarieChartData[0]
+            },
+            {
+              label: 'Secteur 2',
+              fill: false,
+              borderColor: "blue",
+              borderWidth: 2,
+              borderDash: [],
+              borderDashOffset: 0.0,
+              pointBackgroundColor: config.colors.primary,
+              pointBorderColor: 'rgba(255,255,255,0)',
+              pointHoverBackgroundColor: config.colors.primary,
+              pointBorderWidth: 20,
+              pointHoverRadius: 4,
+              pointHoverBorderWidth: 15,
+              pointRadius: 4,
+              data: SalarieChartData[1]
+            },
+            {
+              label: 'Secteur 3',
+              fill: false,
               borderColor: config.colors.primary,
               borderWidth: 2,
               borderDash: [],
@@ -331,7 +472,7 @@ export default {
               pointHoverRadius: 4,
               pointHoverBorderWidth: 15,
               pointRadius: 4,
-              data: [5, 4, 9, 16, 12, 10]
+              data: SalarieChartData[2]
             }
           ]
         },
@@ -371,16 +512,16 @@ export default {
       blueBarChart: {
         extraOptions: chartConfigs.barChartOptions,
         chartData: {
-          labels: ['USA', 'GER', 'AUS', 'UK', 'RO', 'BR'],
+          labels: ['Secteur 1', 'Secteur 2', 'Secteur 3'],
           datasets: [
             {
-              label: 'Countries',
+              label: 'Quantité à collecter',
               fill: true,
               borderColor: config.colors.info,
               borderWidth: 2,
               borderDash: [],
               borderDashOffset: 0.0,
-              data: [53, 20, 10, 80, 100, 45]
+              data: [120, 135, 110]
             }
           ]
         },
@@ -397,97 +538,21 @@ export default {
       return this.$rtl.isRTL;
     },
     bigLineChartCategories () {
-      return [{ name: 'Secteur 1', icon: 'tim-icons icon-single-02' }, {
-        name: 'Secteur 2',
+      return [{ name: 'Jour', icon: 'tim-icons icon-single-02' }, {
+        name: 'Semaine',
         icon: 'tim-icons icon-gift-2'
-      }, { name: 'Secteur 3', icon: 'tim-icons icon-tap-02' }];
+      }, { name: 'Mois', icon: 'tim-icons icon-tap-02' },
+      { name: 'Trimestre', icon: 'tim-icons icon-tap-02' }];
     }
   },
   methods: {
-    initCharts (index) {
-
-      
-
-
-      let indexOf = this.bigLineChart.activeIndex.indexOf(index);
-
-      if(indexOf > -1){
-        if(this.bigLineChart.activeIndex.length > 1)
-        this.bigLineChart.activeIndex.splice(indexOf, 1);
-      }
-      else{
-        this.bigLineChart.activeIndex.push(index);
-      }
-
-      let datasets = [
-    {
-      ...bigChartDatasetOptions,
-      data: bigChartData[0]
-    },
-    {
-      ...bigChartDatasetOptions,
-      data: bigChartData[1]
-    },
-    {
-      ...bigChartDatasetOptions,
-      data: bigChartData[index]
+    loadTable(index){
+      this.dataMvt = tableData[index]
+      this.activePeriode = index;
     }
-  ]
-
-      // let datasets = []
-
-      // this.bigLineChart.activeIndex.forEach((valeur, index) => {
-      //   datasets.push({
-      //     ...bigChartDatasetOptions,
-      //     data: bigChartData[valeur],
-      //   })
-      // })
-      
-      let chartData = {
-        datasets,
-        labels: bigChartLabels
-      };
-      
-      this.$refs.bigChart.updateGradients(chartData);
-      this.bigLineChart.chartData = chartData;
-
-      
-
-
-      //  let chartData = {
-      //   datasets: [{
-      //     ...bigChartDatasetOptions,
-      //     data: bigChartData[index]
-      //   }],
-      //   labels: bigChartLabels
-      // };
-
-
-      let SalariechartData = {
-              datasets: [{
-              label: 'Nombre Salariés',
-              fill: true,
-              borderColor: config.colors.primary,
-              borderWidth: 2,
-              borderDash: [],
-              borderDashOffset: 0.0,
-              pointBackgroundColor: config.colors.primary,
-              pointBorderColor: 'rgba(255,255,255,0)',
-              pointHoverBackgroundColor: config.colors.primary,
-              pointBorderWidth: 20,
-              pointHoverRadius: 4,
-              pointHoverBorderWidth: 15,
-              pointRadius: 4,
-                data: SalarieChartData[index]
-              }],
-            };
-            this.$refs.SalarieChart.updateGradients(SalariechartData);
-            this.purpleLineChart.chartData = SalariechartData;
-
-          }
   },
   mounted () {
-    // this.initCharts(0);  
+    this.loadTable(0);
   }
 }
 </script>
