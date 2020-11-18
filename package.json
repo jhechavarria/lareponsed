@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@nuxtjs/pwa": "^3.2.2",
+    "@tomtom-international/web-sdk-maps": "^5.64.0",
     "bootstrap": "4.3.1",
     "chart.js": "^2.9.4",
     "d3": "^5.16.0",

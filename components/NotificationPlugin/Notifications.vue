@@ -8,6 +8,7 @@
         :key="notification.timestamp.getTime()"
         @close="removeNotification"
       >
+      zef
       </notification>
     </transition-group>
   </div>
