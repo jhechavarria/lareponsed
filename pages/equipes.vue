@@ -38,7 +38,7 @@
     <div class="col-11">
       <div class="col">
         <card card-body-classes="table-fonction-width">
-          <h4 slot="header" class="card-title">Equipes affectées à la semaien 37</h4>
+          <h4 slot="header" class="card-title">Equipes affectées à la semaine 37</h4>
           <el-table :data="tableData2">
             <el-table-column
               sortable
