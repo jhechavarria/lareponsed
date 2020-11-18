@@ -1,6 +1,9 @@
 <template>
   <div>
     <div class="row">
+
+    </div>
+    <div class="row">
       <div class="col-4">
         <card>
           <h4 slot="header" class="card-title">Remplissage de la benne</h4>
@@ -15,8 +18,8 @@
       </div>
       <div class="col-4">
         <card>
-          <h4 slot="header" class="card-title">Durée de tournée</h4>
-          <h1>45 Minutes</h1>
+          <h4 slot="header" class="card-title">Trajet restant</h4>
+          <h1>3 Kilomètres</h1>
         </card>
       </div>
     </div>
@@ -29,11 +32,11 @@
       </div>
       <div class="col-md-6">
         <card card-body-classes="table-full-width">
-          <h4 slot="header" class="card-title">Bennes</h4>
+          <h4 slot="header" class="card-title">Silos</h4>
           <el-table :data="tableData">
             <el-table-column
               sortable
-              label="Benne"
+              label="Silo"
               property="name"
             ></el-table-column>
             <el-table-column
@@ -45,6 +48,11 @@
               sortable
               label="Adresse"
               property="address"
+            ></el-table-column>
+            <el-table-column
+              sortable
+              label="Etat"
+              property="done"
             ></el-table-column>
           </el-table>
         </card>
@@ -66,17 +74,12 @@
           </base-alert>
           <base-alert type="success">
             <span>
-              <b>Benne vidée (Ar15) - </b> 20 rue Dufrène - 69005
+              <b>Silo vidé (Ar05#0015) - </b> 20 rue Dufrène - 69005
             </span>
           </base-alert>
           <base-alert type="warning">
             <span>
-              <b>Panne (1 heure) -</b> 3 rue St. Pierre - 69005
-            </span>
-          </base-alert>
-          <base-alert type="danger">
-            <span>
-              <b>Bouchons (30 minutes) -</b> 3 rue St. Pierre - 69005
+              <b>Route barée -</b> 3 rue St. Pierre - 69005
             </span>
           </base-alert>
         </card>
@@ -103,34 +106,34 @@ export default {
       lyon: [4.834310, 45.767310],
       tableData: [
         {
-          name: 'Ar07',
+          name: 'Ar05#0007',
           address: '103 rue John Doe - 69005',
           full: '80%',
-          done: true
+          done: 'Vidé'
         },
         {
-          name: 'Ar15',
+          name: 'Ar05#0015',
           address: '20 rue Dufrène - 69005',
           full: '78%',
-          done: true
+          done: 'Vidé'
         },
         {
-          name: 'Ar31',
+          name: 'Ar05#0031',
           address: '1 rue du Caire - 69005',
           full: '91%',
-          done: true
+          done: 'Vidé'
         },
         {
-          name: 'Ar01',
+          name: 'Ar05#0001',
           address: '12 rue Juliot - 69005',
           full: '80%',
-          done: false
+          done: 'Planifiée'
         },
         {
-          name: 'Ar14',
+          name: 'Ar05#0014',
           address: '3 rue St. Pierre - 69005',
           full: '71%',
-          done: false
+          done: 'Annulé'
         },
       ]
     };
