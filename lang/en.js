@@ -105,62 +105,62 @@ module.exports = {
       }
     },
     "equipes": {
-      "equipes_a_prevoir_pour_decembre" : "Equipe à prévoir pour décembre",
-      "nombre_de_chauffeurs" : "Nombre de chauffeurs",
-      "nombre_d_agents" : "Nombre d'agents",
-      "info_equipes" : "Info Equipes",
-      "info_equipes_notificatoin_1" : " Equipe 12 à été affectées à l'itinéraire A0F - S49.",
-      "equipes_affectées_a_la_semaine" : "Equipes affectées à la semaines 49",
+      "equipes_a_prevoir_pour_decembre" : "Team to schedule on december",
+      "nombre_de_chauffeurs" : "Total Drivers",
+      "nombre_d_agents" : "Total Agents",
+      "info_equipes" : "Team Info",
+      "info_equipes_notificatoin_1" : "Team 12 was assigned to itinerary A0F - S49.",
+      "equipes_affectées_a_la_semaine" : "Team assigned to week 49",
       "equipes_labels": {
-        "equipe" : "EQUIPe",
-        "nom" : "noms",
-        "fonction" : "fontion",
-        "vehicule" : "Véhicule",
-        "itineraire" : "itinéraire",
-        "secteur" : "secteur",
+        "equipe" : "TEAM",
+        "nom" : "names",
+        "fonction" : "function",
+        "vehicule" : "Vehicle",
+        "itineraire" : "itinerary",
+        "secteur" : "area",
         
       },
       "fonction_var" :{
-        "chauffeur" : "chauffeur",
-        "agent_de_terrain" : "Agent de terrain"
+        "chauffeur" : "Driver",
+        "agent_de_terrain" : "garbage collector"
         }
     },
     "feuilles": {
-      "remplissage_de_la_benne" : "Remplissage de la benne",
-      "silos_recuperes" : "Silos récupérés",
-      "trajet_restant" : "Trajet restant",
-      "duree_estimee" : "Durée estimée",
-      "itineraire" : "Itinéraire",
+      "remplissage_de_la_benne" : "Dump truck filling",
+      "silos_recuperes" : "Emptied silos",
+      "trajet_restant" : "Remaining Trip",
+      "duree_estimee" : "Estimated duration",
+      "itineraire" : "itinerary",
       "silos" : "Silos",
       "silos_labels" : {
         "silo" : "Silo",
-        "remplissage" : "Remplissage",
-        "adresse" : "Adresse",
-        "etat" : "Etat"
+        "remplissage" : "Filling",
+        "adresse" : "Address",
+        "etat" : "Status"
       },
-      "actu_tournée" : "Actu Tournée",
+      "actu_tournée" : "Tour Info",
       "feuilles_var" : {
-        "vide" : "Vidé",
-        "planifie" : "Planifié",
-        "annule" : "Annulé"
+        "vide" : "Emptied",
+        "planifie" : "Planned",
+        "annule" : "Canceled"
       }
-    }
+    },
   },
     "user_profile": {
     "edit_profile_form" : {
       "edit_profile" : "Edit Profile",
-      "enregistrer" : "Enregistrer",
+      "enregistrer" : "Save",
       "edit_profile_var" : {
-        "societe" : "Société",
-        "nom_d_utilisateur" : "Nom d'utilisateur",
+        "societe" : "Company",
+        "nom_d_utilisateur" : "Username",
         "email" : "Email",
-        "prenom" : "Prénom",
-        "nom" : "NOM",
-        "adresse" : "Adresse",
-        "ville" : "Ville",
-        "pays" : "Pays",
-        "code_postal" : "Code Postal",
-        "a_propos_de_moi" : "A propos de moi"
+        "prenom" : "Firstname",
+        "nom" : "LASTNAME",
+        "adresse" : "Address",
+        "ville" : "City",
+        "pays" : "Country",
+        "code_postal" : "Zip Code",
+        "a_propos_de_moi" : "About Me"
       }
     }
   }
