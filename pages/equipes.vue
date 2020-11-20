@@ -3,28 +3,28 @@
     <div class="row">
       <div class="col-md-2 col-sm-4">
         <card>
-          <h4 slot="header" class="card-title text-center">Equipes à prévoir pour Décembre</h4>
+          <h4 slot="header" class="card-title text-center">{{ $t('pages.equipes.equipes_a_prevoir_pour_decembre') }}</h4>
           <h1 align="center">8</h1>
         </card>
       </div>
       <div class="col-md-2 col-sm-4">
         <card>
-          <h4 slot="header" class="card-title text-center">Nombre de chauffeurs</h4>
+          <h4 slot="header" class="card-title text-center">{{ $t('pages.equipes.nombre_de_chauffeurs') }}</h4>
           <h1 align="center">8</h1>
         </card>
       </div>
       <div class="col-md-2 col-sm-4">
         <card>
-          <h4 slot="header" class="card-title text-center">nombre d'agents</h4>
+          <h4 slot="header" class="card-title text-center">{{ $t('pages.equipes.nombre_d_agents') }}</h4>
           <h1 align="center">24</h1>
         </card>
       </div>
       <div class="col-md-6 col-sm-12">
         <card>
-          <h4 slot="header" class="card-title">Info Equipes</h4>
+          <h4 slot="header" class="card-title">{{ $t('pages.equipes.info_equipes') }}</h4>
           <base-alert type="info">
             <span>
-              <b>Info - </b> Equipe 12 à été affectées à l'itinéraire A0F - S49.
+              <b>Info - </b> {{ $t('pages.equipes.info_equipes_notificatoin_1') }}
             </span>
           </base-alert>
         </card>
@@ -34,36 +34,36 @@
     <div class="row">
       <div class="col-12">
         <card card-body-classes="table-fonction-width">
-          <h4 slot="header" class="card-title">Equipes affectées à la semaine 49</h4>
+          <h4 slot="header" class="card-title">{{ $t('pages.equipes.equipes_affectées_a_la_semaine') }}</h4>
           <el-table :data="tableData2">
             <el-table-column
               sortable
-              label="Equipe"
+              :label= "$t('pages.equipes.equipes_labels.equipe')"
               property="equipe"
             ></el-table-column>
             <el-table-column
               sortable
-              label="Nom"
+              :label= "$t('pages.equipes.equipes_labels.nom')"
               property="name"
             ></el-table-column>
             <el-table-column
               sortable
-              label="fonction"
+              :label= "$t('pages.equipes.equipes_labels.fonction')"
               property="fonction"
             ></el-table-column>
             <el-table-column
               sortable
-              label="Véhicule"
+              :label= "$t('pages.equipes.equipes_labels.vehicule')"
               property="done"
             ></el-table-column>
             <el-table-column
               sortable
-              label="Itinéraire"
+              :label= "$t('pages.equipes.equipes_labels.itineraire')"
               property="address"
             ></el-table-column>
             <el-table-column
               sortable
-              label="Secteur"
+              :label= "$t('pages.equipes.equipes_labels.secteur')"
               property="secteur"
             ></el-table-column>
           </el-table>
@@ -99,31 +99,31 @@ export default {
         {
           name: "Gavino Toscano",
           address: "20 rue Dufrène - 69005",
-          fonction: "Agent de terrain",
+          fonction: this.$t('pages.equipes.fonction_var.agent_de_terrain'),
           done: "Vidé",
         },
         {
           name: "Anastasie Sevier",
           address: "1 rue du Caire - 69005",
-          fonction: "Chauffeur",
+          fonction: this.$t('pages.equipes.equipes_labels.fonction_var.chauffeur'),
           done: "Vidé",
         },
         {
           name: "Agate Grandpré",
           address: "3 rue St. Pierre - 69005",
-          fonction: "Agent de terrain",
+          fonction: this.$t('pages.equipes.fonction_var.agent_de_terrain'),
           done: "CB",
         },
         {
           name: "Jamal E. Ford",
           address: "12 rue Juliot - 69005",
-          fonction: "Agent de terrain",
+          fonction: this.$t('pages.equipes.fonction_var.agent_de_terrain'),
           done: "Planifiée",
         },
         {
           name: "Julien Blanchard",
           address: "3 rue St. Pierre - 69005",
-          fonction: "Agent de terrain",
+          fonction: this.$t('pages.equipes.fonction_var.agent_de_terrain'),
           done: "CB",
         },
       ],
@@ -132,7 +132,7 @@ export default {
           equipe: "12",
           name: "Arlette Descoteau",
           address: "A0F",
-          fonction: "Chauffeur",
+          fonction: this.$t('pages.equipes.fonction_var.chauffeur'),
           done: "CL 34",
           secteur: "1",
         },
@@ -140,7 +140,7 @@ export default {
           equipe: "20",
           name: "José Correia",
           address: "00F",
-          fonction: "Agent de terrain",
+          fonction: this.$t('pages.equipes.fonction_var.agent_de_terrain'),
           done: "CB 02",
           secteur: "2",
         },
@@ -164,7 +164,7 @@ export default {
           equipe: "13",
           name: "Adrienne Norbert",
           address: "12A",
-          fonction: "Agent de terrain",
+          fonction: this.$t('pages.equipes.fonction_var.agent_de_terrain'),
           done: "CB",
           secteur: "2",
         },
@@ -172,7 +172,7 @@ export default {
           equipe: "13",
           name: "Jiao Chang",
           address: "12A",
-          fonction: "Agent de terrain",
+          fonction: this.$t('pages.equipes.fonction_var.agent_de_terrain'),
           done: "CB",
           secteur: "2",
         },
@@ -180,7 +180,7 @@ export default {
           equipe: "13",
           name: "Farhah Hajjar",
           address: "12A",
-          fonction: "Agent de terrain",
+          fonction: this.$t('pages.equipes.fonction_var.agent_de_terrain'),
           done: "CB",
           secteur: "2",
         },

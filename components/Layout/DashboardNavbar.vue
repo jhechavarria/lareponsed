@@ -81,10 +81,10 @@
           <p class="d-lg-none">Log out</p>
         </template>
         <li class="nav-link">
-          <a href="#" class="nav-item dropdown-item">{{ $t('components.layout.dashboardNavbar.deconnexion') }}</a>
+          <a href="#" class="nav-item dropdown-item">{{ $t('components.layout.dashboardNavbar.profil') }}</a>
         </li>
         <li class="nav-link">
-          <a href="#" class="nav-item dropdown-item">{{ $t('components.layout.dashboardNavbar.deconnexion') }}</a>
+          <a href="#" class="nav-item dropdown-item">{{ $t('components.layout.dashboardNavbar.parametres') }}</a>
         </li>
         <div class="dropdown-divider"></div>
         <li class="nav-link">
