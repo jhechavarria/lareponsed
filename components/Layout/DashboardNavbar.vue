@@ -76,15 +76,33 @@
         <template
           slot="title"
         >
+          <div class="photo">{{ $i18n.locale.toUpperCase() }}</div>
+          <b class="caret d-none d-lg-block d-xl-block"></b>
+        </template>
+        <li v-for="(locale, index) in $i18n.locales" :key="index" class="nav-link">
+          <a @click="$i18n.locale = locale.code" href="#" class="nav-item dropdown-item">{{ locale.code.toUpperCase() }}</a>
+        </li>
+      </base-dropdown>
+      <base-dropdown
+        tag="li"
+        :menu-on-right="!$rtl.isRTL"
+        title-tag="a"
+        class="nav-item"
+        title-classes="nav-link"
+        menu-classes="dropdown-navbar"
+      >
+        <template
+          slot="title"
+        >
           <div class="photo"><img src="img/logo.png" /></div>
           <b class="caret d-none d-lg-block d-xl-block"></b>
-          <p class="d-lg-none">Log out</p>
+          <p class="d-lg-none">{{ $t('components.layout.dashboardNavbar.deconnexion') }}</p>
         </template>
         <li class="nav-link">
-          <a href="#" class="nav-item dropdown-item">{{ $t('components.layout.dashboardNavbar.deconnexion') }}</a>
+          <a href="#" class="nav-item dropdown-item">{{ $t('components.layout.dashboardNavbar.profil') }}</a>
         </li>
         <li class="nav-link">
-          <a href="#" class="nav-item dropdown-item">{{ $t('components.layout.dashboardNavbar.deconnexion') }}</a>
+          <a href="#" class="nav-item dropdown-item">{{ $t('components.layout.dashboardNavbar.parametres') }}</a>
         </li>
         <div class="dropdown-divider"></div>
         <li class="nav-link">

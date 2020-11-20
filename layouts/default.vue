@@ -3,8 +3,8 @@
     <notifications></notifications>
     <side-bar
       :background-color="sidebarBackground"
-      :short-title="$t('sidebar.shortTitle')"
-      :title="$t('sidebar.title')"
+      :short-title="$t('layouts.default.sidebar.shortTitle')"
+      :title="$t('layouts.default.sidebar.title')"
     >
       <template slot="links">
         <label class="ml-3 mb-n2 red">{{ $t('layouts.default.sidebar.groups.agency') }}</label>
