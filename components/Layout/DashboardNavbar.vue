@@ -141,13 +141,17 @@ export default {
       showMenu: false,
       searchModalVisible: false,
       searchQuery: '',
-      notifications: [
+    };
+  },
+  computed: {
+    notifications() {
+      return [
         "CB E03 " + this.$t('pages.alertes.pannes_values.crevaison'),
         "Ar01#000001 " + this.$t('pages.alertes.pannes_values.termine'),
         "CL Hooper16 " + this.$t('pages.alertes.pannes_values.hs'),
         "Ar07#05301 " + this.$t('pages.alertes.pannes_values.maintenance')
       ]
-    };
+    }
   },
   methods: {
     capitalizeFirstLetter(string) {

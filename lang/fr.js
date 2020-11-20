@@ -147,6 +147,8 @@ module.exports = {
       }
     },
       "user_profile": {
+        "coFounder": "Co-Fondatrice",
+        "slogan": "Mieux vaut prendre le changement par la main avant qu'il ne nous prenne par la gorge",
       "edit_profile_form" : {
         "edit_profile" : "Edit Profile",
         "enregistrer" : "Enregistrer",

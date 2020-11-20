@@ -7,14 +7,14 @@
       <div class="block block-three"></div>
       <div class="block block-four"></div>
       <a href="javascript:void(0)">
-        <img class="avatar" src="img/emilyz.jpg" alt="..." />
+        <img class="avatar" src="/img/emilyz.jpg" alt="" />
         <h5 class="title">Alice PETIT</h5>
       </a>
-      <p class="description">Co-Fondatrice</p>
+      <p class="description">{{ $t('user_profile.coFounder') }}</p>
     </div>
     <p></p>
     <div class="card-description">
-      Mieux vaut prendre le changement par la main avant qu'il ne nous prenne par la gorge
+      {{ $t('user_profile.slogan') }}
     </div>
 
     <div slot="footer" class="button-container">

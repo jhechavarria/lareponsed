@@ -147,6 +147,8 @@ module.exports = {
     },
   },
     "user_profile": {
+      "coFounder": "Co-founder",
+      "slogan": "You better embrace changes as they come before they eat you as they go",
     "edit_profile_form" : {
       "edit_profile" : "Edit Profile",
       "enregistrer" : "Save",
