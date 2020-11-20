@@ -627,27 +627,37 @@ export default {
     tableData = tableData.map(datas => {
       return datas.map(data => {
         if (data.secteurO) {
-          data.secteurO = this.$t('pages.dashboard.secteur', {secteur: data.secteurO})
+          let secteur = data.secteurO.split(' ')
+          data.secteurO = this.$t('pages.dashboard.secteur', {secteur: secteur[secteur.length - 1]})
         }
         if (data.secteurD) {
-          data.secteurD = this.$t('pages.dashboard.secteur', {secteur: data.secteurD})
+          let secteur = data.secteurD.split(' ')
+          data.secteurD = this.$t('pages.dashboard.secteur', {secteur: secteur[secteur.length - 1]})
         }
         return data
       })
     })
-    bigChartDatasetOptions0.label = this.$t('pages.dashboard.secteur', {secteur: bigChartDatasetOptions0.label})
-    bigChartDatasetOptions1.label = this.$t('pages.dashboard.secteur', {secteur: bigChartDatasetOptions1.label})
-    bigChartDatasetOptions2.label = this.$t('pages.dashboard.secteur', {secteur: bigChartDatasetOptions2.label})
+    let secteur = bigChartDatasetOptions0.label.split(' ')
+    bigChartDatasetOptions0.label = this.$t('pages.dashboard.secteur', {secteur: secteur[secteur.length - 1]})
+    secteur = bigChartDatasetOptions1.label.split(' ')
+    bigChartDatasetOptions1.label = this.$t('pages.dashboard.secteur', {secteur: secteur[secteur.length - 1]})
+    secteur = bigChartDatasetOptions2.label.split(' ')
+    bigChartDatasetOptions2.label = this.$t('pages.dashboard.secteur', {secteur: secteur[secteur.length - 1]})
     this.purpleLineChart.chartData.datasets = this.purpleLineChart.chartData.datasets.map(data => {
-      data.label = this.$t('pages.dashboard.secteur', {secteur: data.label})
+      let secteur = data.label.split(' ')
+      data.label = this.$t('pages.dashboard.secteur', {secteur: secteur[secteur.length - 1]})
       return data
     })
+    console.log('SECTEUR :', secteur)
     this.blueBarChart.chartData.labels = this.blueBarChart.chartData.labels.map(label => {
-      return this.$t('pages.dashboard.secteur', {secteur: label})
+      let secteur = label.split(' ')
+      return this.$t('pages.dashboard.secteur', { secteur: secteur[secteur.length - 1] })
     })
-    this.blueBarChart.chartData.datasets[0].label = this.$t('pages.dashboard.quandCollecter', {secteur: this.blueBarChart.chartData.datasets[0].label})
+    secteur = this.blueBarChart.chartData.datasets[0].label.split(' ')
+    this.blueBarChart.chartData.datasets[0].label = this.$t('pages.dashboard.quandCollecter', {secteur: secteur[secteur.length - 1]})
     this.greenLineChart.chartData.labels = this.greenLineChart.chartData.labels.map(label => {
-      return this.$t('pages.dashboard.secteur', {secteur: label})
+      let secteur = label.split(' ')
+      return this.$t('pages.dashboard.secteur', { secteur: secteur[secteur.length - 1] })
     })
     this.dataMvt = tableData[0]
     this.bigLineChart = {
