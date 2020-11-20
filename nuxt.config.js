@@ -74,16 +74,8 @@ export default {
         file: 'en.js'
       },
       {
-        code: 'ar',
-        file: 'ar.js'
-      },
-      {
         code: 'fr',
         file: 'fr.js'
-      },
-      {
-        code: 'es',
-        file: 'es.js'
       }
     ],
     lazy: true,
