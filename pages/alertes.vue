@@ -2,30 +2,30 @@
   <div class="row">
     <div class="col-md-12">
       <card card-body-classes="table-full-width">
-        <h4 slot="header" class="card-title">Pannes</h4>
+        <h4 slot="header" class="card-title">{{ $t('pages.alertes.pannes') }}</h4>
         <el-table :data="tableData">
           <el-table-column
             min-width="150"
             sortable
-            label="Ref Matérielle"
+            :label="$t('pages.alertes.pannes_labels.ref_materielle')"
             property="name"
           ></el-table-column>
           <el-table-column
             min-width="150"
             sortable
-            label="Type Matérielle"
+            :label="$t('pages.alertes.pannes_labels.type_materiel')"
             property="materiel"
           ></el-table-column>
           <el-table-column
             min-width="150"
             sortable
-            label="Panne"
+            :label="$t('pages.alertes.pannes_labels.panne')"
             property="panne"
           ></el-table-column>
           <el-table-column
             min-width="150"
             sortable
-            label="ETAT"
+            :label="$t('pages.alertes.pannes_labels.etat')"
             property="etat"
           ></el-table-column>
           <el-table-column
@@ -33,7 +33,7 @@
             sortable
             align="right"
             header-align="right"
-            label="Date d'incident"
+            :label="$t('pages.alertes.pannes_labels.etat')"
             property="incident"
           ></el-table-column>
           <el-table-column
@@ -41,7 +41,7 @@
             sortable
             align="right"
             header-align="right"
-            label="Date de cloture"
+            :label="$t('pages.alertes.pannes_labels.etat')"
             property="cloture"
           ></el-table-column>
         </el-table>
@@ -51,8 +51,7 @@
     <div class="col-md-12">
       <card class="card-plain" body-classes="table-full-width">
         <template slot="header">
-          <h4 class="card-title">Alertes Silos</h4>
-          <p class="category">Here is a subtitle for this table</p>
+          <h4 class="card-title">{{ $t('pages.alertes.alertes_silos') }}</h4>
         </template>
         <el-table
           header-cell-class-name="table-transparent"
@@ -63,19 +62,19 @@
           <el-table-column
             min-width="150"
             sortable
-            label="Silo"
+            :label="$t('pages.alertes.alertes_silos_labels.silo')"
             property="name"
           ></el-table-column>
           <el-table-column
             min-width="150"
             sortable
-            label="Seuil"
+            :label="$t('pages.alertes.alertes_silos_labels.seuil')"
             property="materiel"
           ></el-table-column>
           <el-table-column
             min-width="150"
             sortable
-            label="Prise en compte"
+            :label="$t('pages.alertes.alertes_silos_labels.prise_compte')"
             property="etat"
           ></el-table-column>
           <el-table-column
@@ -83,7 +82,7 @@
             sortable
             align="right"
             header-align="right"
-            label="Date & heure d'incident"
+            :label="$t('pages.alertes.alertes_silos_labels.date_heure_incident')"
             property="incident"
           ></el-table-column>
         </el-table>

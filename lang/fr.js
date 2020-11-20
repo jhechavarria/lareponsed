@@ -37,7 +37,27 @@ module.exports = {
       "widgets": "Widgets",
       "charts": "Charts",
       "calendar": "Calendar",
-      "teams" : "Equipes"
+      "teams" : "Equipes",
+    },
+    "pages": {
+      "alertes": {
+        "pannes": "Pannes",
+        "pannes_labels": {
+          "ref_materielle": "Ref Matériel",
+          "type_materiel": "Type Matériel",
+          "panne": "Panne",
+          "etat": "Etat",
+          "date_incident": "Date d'incident",
+          "date_cloture": "Date de cloture"
+        },
+        "alertes_silos": "Alertes Silos",
+        "alertes_silos_labels": {
+          "silo": "Silo",
+          "seuil": "Seuil",
+          "prise_compte": "Prise en compte",
+          "date_heure_incident": "Date & heure d'incident"
+        }
+      }
     }
   }
   

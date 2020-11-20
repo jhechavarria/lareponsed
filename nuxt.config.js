@@ -80,6 +80,10 @@ export default {
       {
         code: 'fr',
         file: 'fr.js'
+      },
+      {
+        code: 'es',
+        file: 'es.js'
       }
     ],
     lazy: true,
@@ -113,18 +117,11 @@ export default {
    */
   pwa: {
     manifest: {
-      name: 'Gassify',
-      short_name : 'Gassify',
-      description : "L'IA au service de la ville",
-      lang: 'fr',
-      dir: 'ltr',
-      start_url : 'https://lrd.shelltopia.fr/',
+      name: 'Glassify',
+      short_name : 'Glassify',
+      description : "Glassify est doté d’une IA capable d’analyser en temps réel l’état des silos, d’en connaître le taux de remplissage et les pannes éventuelles, et de programmer en conséquence les équipes, les véhicules ainsi que les itinéraires les plus optimisés afin de garantir la propreté de la ville, avec un coût minimum en temps et en efforts.",
+      start_url : 'https://glassify.cloud/',
       useWebmanifestExtension: false,
-    },
-    icon: {
-      source: '@/static/',
-      targetDir: '@/static',
-      fileName: 'icon.png',
     }
   }
 }
