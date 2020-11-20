@@ -1,0 +1,67 @@
+version: '3'
+
+services:
+  docker-socket-proxy:
+    image: tecnativa/docker-socket-proxy
+    container_name: docker-socket-proxy
+    restart: unless-stopped
+    privileged: true
+    networks:
+      - socket-proxy
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      TZ: '${TZ}'
+      CONTAINERS: '1'
+  traefik:
+    image: traefik:${TRAEFIK_TAG}
+    container_name: traefik
+    restart: unless-stopped
+    depends_on:
+      - docker-socket-proxy
+    networks:
+      - web-proxy
+      - socket-proxy
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ${LOCAL_STORAGE}/traefik/traefik.toml:/etc/traefik/traefik.toml
+      - ${LOCAL_STORAGE}/traefik/traefik-dynamic.toml:/etc/traefik/traefik-dynamic.toml
+      - ${LOCAL_STORAGE}/traefik/acme.json:/acme.json
+    environment:
+      TZ: '${TZ}'
+    labels:
+      traefik.enable: 'true'
+      traefik.http.routers.traefik.rule: 'Host(`traefik.${DOMAIN_NAME}`)'
+      traefik.http.routers.traefik.entrypoints: 'websecure'
+      traefik.http.routers.traefik.service: 'api@internal'
+      traefik.http.routers.traefik.middlewares: 'set-security-headers@file, traefik-auth'
+      traefik.http.middlewares.traefik-auth.basicauth.users: '${TRAEFIK_API_USER}:${TRAEFIK_API_PASSWORD}'
+  nuxt_app:
+    image: node:${NODE_TAG}
+    container_name: nuxt_app
+    restart: unless-stopped
+    networks:
+      - web-proxy
+    volumes:
+      - ${LOCAL_STORAGE}/nuxt_app:/app
+    working_dir: /app
+    command: "bash app.sh"
+    environment:
+      TZ: '${TZ}'
+    labels:
+      traefik.enable: 'true'
+      traefik.http.routers.nuxt_app.rule: 'Host(`${DOMAIN_NAME}`) || Host(`www.${DOMAIN_NAME}`)'
+      traefik.http.routers.nuxt_app.entrypoints: 'websecure'
+      traefik.http.routers.nuxt_app.middlewares: 'set-security-headers@file'
+      traefik.http.services.nuxt_app.loadbalancer.server.port: '80'
+      traefik.http.middlewares.nuxt_app-redirect-to-nonwww.redirectRegex.permanent: 'true'
+      traefik.http.middlewares.nuxt_app-redirect-to-nonwww.redirectregex.regex: '^https://www.${DOMAIN_NAME}/(.*)'
+      traefik.http.middlewares.nuxt_app-redirect-to-nonwww.redirectregex.replacement: 'https://${DOMAIN_NAME}/$${1}'
+
+networks:
+  socket-proxy:
+    external: false
+  web-proxy:
+    external: false
