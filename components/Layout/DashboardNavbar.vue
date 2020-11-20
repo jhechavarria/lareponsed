@@ -16,7 +16,7 @@
           <span class="navbar-toggler-bar bar3"></span>
         </button>
       </div>
-      <nuxt-link class="navbar-brand ml-xl-3 ml-5" to="/">Glassify</nuxt-link>
+      <nuxt-link class="navbar-brand ml-xl-3 ml-5" :to="localePath('/')">Glassify</nuxt-link>
     </div>
 
     <ul class="navbar-nav" :class="$rtl.isRTL ? 'mr-auto' : 'ml-auto'">
@@ -62,7 +62,7 @@
           <p class="d-lg-none">New Notifications</p>
         </template>
         <li v-for="(notification, index) in notifications" :key="index" class="nav-link">
-          <nuxt-link to="/alertes" class="nav-item dropdown-item">{{ notification }}</nuxt-link>
+          <nuxt-link :to="localePath('/alertes')" class="nav-item dropdown-item">{{ notification }}</nuxt-link>
         </li>
       </base-dropdown>
       <base-dropdown
@@ -80,7 +80,7 @@
           <b class="caret d-none d-lg-block d-xl-block"></b>
         </template>
         <li v-for="(locale, index) in $i18n.locales" :key="index" class="nav-link">
-          <a @click="$i18n.locale = locale.code" href="#" class="nav-item dropdown-item">{{ locale.code.toUpperCase() }}</a>
+          <nuxt-link :to="switchLocalePath(locale.code)" class="nav-item dropdown-item">{{ locale.code.toUpperCase() }}</nuxt-link>
         </li>
       </base-dropdown>
       <base-dropdown

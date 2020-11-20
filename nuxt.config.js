@@ -81,6 +81,7 @@ export default {
     lazy: true,
     langDir: 'lang/',
     defaultLocale: 'fr',
+    strategy: 'prefix'
   },
   /*
   ** Build configuration

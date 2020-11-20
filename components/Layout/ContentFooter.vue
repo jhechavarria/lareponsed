@@ -3,17 +3,17 @@
     <div class="container-fluid">
       <ul class="nav">
         <li class="nav-item">
-          <nuxt-link to="/" class="nav-link">
+          <nuxt-link :to="localePath('/alertes')" class="nav-link">
             Glassify
           </nuxt-link>
         </li>
         <li class="nav-item">
-          <nuxt-link to="/alertes" class="nav-link">
+          <nuxt-link :to="localePath('/alertes')" class="nav-link">
             {{ $t('layouts.default.sidebar.alertes') }}
           </nuxt-link>
         </li>
         <li class="nav-item">
-          <nuxt-link to="/feuilles" class="nav-link">
+          <nuxt-link :to="localePath('/feuilles')" class="nav-link">
             {{ $t('layouts.default.sidebar.feuilleDeRoute') }}
           </nuxt-link>
         </li>
@@ -21,7 +21,7 @@
       <div class="copyright">
         &copy; {{ year }}, {{ $t('components.layout.contentFooter.faitAvec') }} <i class="tim-icons icon-heart-2"></i>, {{ $t('components.layout.contentFooter.par') }}
         
-        <nuxt-link to="/">
+        <nuxt-link :to="localePath('/')">
           Glass Connect
         </nuxt-link>
         {{ $t('components.layout.contentFooter.avenirMeilleur') }}.

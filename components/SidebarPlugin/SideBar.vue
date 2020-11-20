@@ -2,10 +2,10 @@
   <div class="sidebar" :data="backgroundColor">
     <div class="sidebar-wrapper" ref="sidebarScrollArea">
       <div class="logo">
-        <nuxt-link to="/" class="simple-text logo-mini">
+        <nuxt-link :to="localePath('/')" class="simple-text logo-mini">
           <img :src="logo" alt="app-logo" />
         </nuxt-link>
-        <nuxt-link to="/" class="simple-text logo-normal text-wrap">
+        <nuxt-link :to="localePath('/')" class="simple-text logo-normal text-wrap">
           {{ title }}
         </nuxt-link>
       </div>
