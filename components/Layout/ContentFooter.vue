@@ -4,27 +4,27 @@
       <ul class="nav">
         <li class="nav-item">
           <nuxt-link to="/" class="nav-link">
-            Glass Connect
+            Glassify
           </nuxt-link>
         </li>
         <li class="nav-item">
           <nuxt-link to="/alertes" class="nav-link">
-            Alertes
+            {{ $t('layouts.default.sidebar.alertes') }}
           </nuxt-link>
         </li>
         <li class="nav-item">
           <nuxt-link to="/feuilles" class="nav-link">
-            Feuille de route
+            {{ $t('layouts.default.sidebar.feuilleDeRoute') }}
           </nuxt-link>
         </li>
       </ul>
       <div class="copyright">
-        &copy; {{ year }}, made with <i class="tim-icons icon-heart-2"></i> by
+        &copy; {{ year }}, {{ $t('components.layout.contentFooter.faitAvec') }} <i class="tim-icons icon-heart-2"></i>, {{ $t('components.layout.contentFooter.par') }}
         
         <nuxt-link to="/">
           Glass Connect
         </nuxt-link>
-        for a better future.
+        {{ $t('components.layout.contentFooter.avenirMeilleur') }}.
       </div>
     </div>
   </footer>

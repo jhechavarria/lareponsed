@@ -106,36 +106,36 @@ export default {
           id: 1,
           name: 'CB E03',
           incident: '17/11/2020',
-          materiel: 'Véhicule',
-          etat: 'En dépannage',
-          panne: 'Crevaison',
+          materiel: this.$t('pages.alertes.pannes_values.vehicule'),
+          etat: this.$t('pages.alertes.pannes_values.depannage'),
+          panne: this.$t('pages.alertes.pannes_values.crevaison'),
           cloture : ' '
         },
         {
           id: 2,
           name: 'Ar01#000001',
           incident: '16/11/2020',
-          materiel: 'Silo',
-          etat: 'Terminé',
-          panne: 'Capteur',
+          materiel: this.$t('pages.alertes.pannes_values.silo'),
+          etat: this.$t('pages.alertes.pannes_values.termine'),
+          panne: this.$t('pages.alertes.pannes_values.capteur'),
           cloture : '16/11/2020'
         },
         {
           id: 3,
           name: 'CL Hooper16',
           incident: '15/11/2020',
-          materiel: 'Véhicule',
-          etat: 'HS',
-          panne: 'Benne',
+          materiel: this.$t('pages.alertes.pannes_values.vehicule'),
+          etat: this.$t('pages.alertes.pannes_values.hs'),
+          panne: this.$t('pages.alertes.pannes_values.benne'),
           cloture : ' '
         },
         {
           id: 4,
           name: 'Ar07#05301',
           incident: '15/11/2020',
-          materiel: 'Silo',
-          etat: 'En maintenance',
-          panne: 'Alimentation',
+          materiel: this.$t('pages.alertes.pannes_values.silo'),
+          etat: this.$t('pages.alertes.pannes_values.maintenance'),
+          panne: this.$t('pages.alertes.pannes_values.alimentation'),
           cloture : ' '
         },
         {
@@ -152,28 +152,28 @@ export default {
           name: 'Ar09#03525',
           incident: '17/11/2020  22:18',
           materiel: '88%',
-          etat: 'Reportée'
+          etat: this.$t('pages.alertes.alertes_silos_values.reportee')
         },
         {
           id: 2,
           name: 'Ar07#00666',
           incident: '17/11/2020 08:02',
           materiel: '85%',
-          etat: 'effecuée'
+          etat: this.$t('pages.alertes.alertes_silos_values.effectuee')
         },
         {
           id: 3,
           name: 'Ar09#01825',
           incident: '17/11/2020 08:12',
           materiel: '92%',
-          etat: 'en cours'
+          etat: this.$t('pages.alertes.alertes_silos_values.en_cours')
         },
         {
           id: 4,
           name: 'Ar09#04675',
           incident: '14/11/2020 17:47',
           materiel: '88%',
-          etat: 'effecuée'
+          etat: this.$t('pages.alertes.alertes_silos_values.effectuee')
         },
         {
           id: 5,

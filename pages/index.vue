@@ -6,8 +6,8 @@
         <template slot="header">
           <div class="row">
             <div class="col-sm-6" :class="isRTL ? 'text-right' : 'text-left'">
-              <h5 class="card-category">Quantité totale par secteur</h5>
-              <h2 class="card-title">Collectes</h2>
+              <h5 class="card-category">{{ $t('pages.dashboard.totalParSecteur') }}</h5>
+              <h2 class="card-title">{{ $t('pages.dashboard.collectes') }}</h2>
             </div>
             <!-- <div class="col-sm-6 d-flex d-sm-block">
               <div
@@ -57,9 +57,9 @@
     <div class="col-lg-6" :class="{ 'text-right': isRTL }">
       <card type="chart">
         <template slot="header">
-          <h5 class="card-category">Effectif necéssaire par mois</h5>
+          <h5 class="card-category">{{ $t('pages.dashboard.effectifNecessairesMois') }}</h5>
           <h3 class="card-title">
-            <i class="text-primary "></i> Nombre de salariés
+            <i class="text-primary "></i> {{ $t('pages.dashboard.nombreSalaries') }}
           </h3>
         </template>
         <div class="chart-area">
@@ -78,9 +78,9 @@
     <div class="col-lg-6" :class="{ 'text-right': isRTL }">
       <card type="chart">
         <template slot="header">
-          <h5 class="card-category">Prédictions</h5>
+          <h5 class="card-category">{{ $t('pages.dashboard.predictions') }}</h5>
           <h3 class="card-title">
-            <i class="tim-icons icon-delivery-fast text-info "></i> Collecte prévue pour le mois prochain
+            <i class="tim-icons icon-delivery-fast text-info "></i> {{ $t('pages.dashboard.collectePrevueMois') }}
           </h3>
         </template>
         <div class="chart-area">
@@ -139,7 +139,7 @@
     <div class="col-lg-7">
       <card card-body-classes="table-full-width">
         <template slot="header">
-        <h4 class="card-title ml-n3 col-lg-12">Tournées à prévoir pour les prochaines périodes</h4>
+        <h4 class="card-title ml-n3 col-lg-12">{{ $t('pages.dashboard.tourneesPrevoirPeriode') }}</h4>
         <div class="d-flex ">
               <div
                 class="btn-group btn-group-toggle"
@@ -173,19 +173,19 @@
           <el-table-column
             min-width="150"
             sortable
-            label="Secteur Origine"
+            :label="$t('pages.dashboard.tourneesPrevoirPeriodeLabels.secteurOrigine')"
             property="secteurO"
           ></el-table-column>
           <el-table-column
             min-width="150"
             sortable
-            label="Secteur Destination"
+            :label="$t('pages.dashboard.tourneesPrevoirPeriodeLabels.secteurDestination')"
             property="secteurD"
           ></el-table-column>
           <el-table-column
             min-width="150"
             sortable
-            label="Type"
+            :label="$t('pages.dashboard.tourneesPrevoirPeriodeLabels.type')"
             property="type"
           ></el-table-column>       
           <el-table-column
@@ -193,7 +193,7 @@
             sortable
             align="right"
             header-align="right"
-            label="Nombre"
+            :label="$t('pages.dashboard.tourneesPrevoirPeriodeLabels.nombre')"
             property="nb"
           ></el-table-column>
         </el-table>
@@ -201,21 +201,21 @@
     </div>
     <div class="col-lg-5">
       <card card-body-classes="table-full-width">
-        <h4 slot="header" class="card-title">Variation des effectifs</h4>
+        <h4 slot="header" class="card-title">{{ $t('pages.dashboard.variationEffectifs') }}</h4>
         <el-table :data="events">
           <el-table-column
             sortable
-            label="Date depart"
+            :label="$t('pages.dashboard.variationEffectifsLabels.dateDebut')"
             property="dateStart"
           ></el-table-column>
           <el-table-column
             sortable
-            label="Date fin"
+            :label="$t('pages.dashboard.variationEffectifsLabels.dateFin')"
             property="dateEnd"
           ></el-table-column>
           <el-table-column
             sortable
-            label="Effectifs"
+            :label="$t('pages.dashboard.variationEffectifsLabels.effectifs')"
             property="effectifs"
           ></el-table-column>
         </el-table>
@@ -224,6 +224,7 @@
   </div>
 </template>
 <script>
+import Vue from 'vue'
 import LineChart from '@/components/Charts/LineChart';
 import BarChart from '@/components/Charts/BarChart';
 import * as chartConfigs from '@/components/Charts/config';
@@ -254,10 +255,10 @@ bigChartData.forEach((set, index) => {
 //   [7, 8, 5, 13, 12, 9]
 // ]
 
-let bigChartLabels = ['JAN', 'FEV', 'MAR', 'AVR', 'MAI', 'JUIN', 'JUIL', 'AOUT', 'SEP', 'OCT', 'NOV', 'DEC']
+//let bigChartLabels = ['JAN', 'FEV', 'MAR', 'AVR', 'MAI', 'JUIN', 'JUIL', 'AOUT', 'SEP', 'OCT', 'NOV', 'DEC']
 
 let bigChartDatasetOptions0 = {
-  label: "Secteur 1",
+  label: "1",
   fill: false,
   borderColor: config.colors.orange,
   borderWidth: 2,
@@ -274,7 +275,7 @@ let bigChartDatasetOptions0 = {
 
 
 let bigChartDatasetOptions1 = {
-  label: "Secteur 2",
+  label: "2",
   fill: false,
   borderColor: config.colors.info,
   borderWidth: 2,
@@ -291,7 +292,7 @@ let bigChartDatasetOptions1 = {
 
 
 let bigChartDatasetOptions2 = {
-  label: "Secteur 3",
+  label: "3",
   fill: false,
   borderColor: config.colors.primary,
   borderWidth: 2,
@@ -310,8 +311,8 @@ let tableData = [
         [
         {
           id: 1,
-          secteurO: 'Secteur 1',
-          secteurD: 'Secteur 3',
+          secteurO: '1',
+          secteurD: '3',
           type: 'Effectif',
           nb: '1'
         }
@@ -319,36 +320,36 @@ let tableData = [
         [
         {
           id: 1,
-          secteurO: 'Secteur 2',
-          secteurD: 'Secteur 3',
+          secteurO: '2',
+          secteurD: '3',
           type: 'Benne 40T',
           nb: '1'
         },
         {
           id: 2,
-          secteurO: 'Secteur 3',
-          secteurD: 'Secteur 1',
+          secteurO: '3',
+          secteurD: '1',
           type: 'Effectif',
           nb: '2'
         },
         {
           id: 3,
-         secteurO: 'Secteur 2',
-          secteurD: 'Secteur 3',
+          secteurO: '2',
+          secteurD: '3',
           type: 'Benne 30T',
           nb: '1'
         },
         {
           id: 4,
-          secteurO: 'Secteur 3',
-          secteurD: 'Secteur 1',
+          secteurO: '3',
+          secteurD: '1',
           type: 'Benne 40T',
           nb: '1'
         },
         {
           id: 5,
-          secteurO: 'Secteur 3',
-          secteurD: 'Secteur 2',
+          secteurO: '3',
+          secteurD: '2',
           type: 'Effectif',
           nb: '3'
         }  
@@ -356,22 +357,22 @@ let tableData = [
        [
         {
           id: 1,
-          secteurO: 'Secteur 2',
-          secteurD: 'Secteur 3',
+          secteurO: '2',
+          secteurD: '3',
           type: 'Effectif',
           nb: '4'
         },
         {
           id: 2,
-          secteurO: 'Secteur 2',
-          secteurD: 'Secteur 3',
+          secteurO: '2',
+          secteurD: '3',
           type: 'Benne 40T',
           nb: '1'
         },
         {
           id: 3,
-          secteurO: 'Secteur 1',
-          secteurD: 'Secteur 2',
+          secteurO: '1',
+          secteurD: '2',
           type: 'Effectif',
           nb: '1'
         }     
@@ -379,29 +380,29 @@ let tableData = [
        [
         {
           id: 1,
-          secteurO: 'Secteur 1',
-          secteurD: 'Secteur 3',
+          secteurO: '1',
+          secteurD: '3',
           type: 'Effectif',
           nb: '1'
         },
         {
           id: 2,
-          secteurO: 'Secteur 2',
-          secteurD: 'Secteur 3',
+          secteurO: '2',
+          secteurD: '3',
           type: 'Benne 40T',
           nb: '1'
         },
         {
           id: 3,
-          secteurO: 'Secteur 2',
-          secteurD: 'Secteur 1',
+          secteurO: '2',
+          secteurD: '1',
           type: 'Benne 30T',
           nb: '1'
         },
         {
           id: 4,
-          secteurO: 'Secteur 2',
-          secteurD: 'Secteur 3',
+          secteurO: '2',
+          secteurD: '3',
           type: 'Effectif',
           nb: '2'
         }
@@ -459,8 +460,8 @@ export default {
           effectifs: '+5',
         }
       ],
-      
-    dataMvt: tableData[0],
+
+    dataMvt: null,
 
     activePeriode: 0,
 
@@ -475,7 +476,7 @@ export default {
             data: bigChartData[1]},
           { ...bigChartDatasetOptions2,
             data: bigChartData[2]}],
-          labels: bigChartLabels
+          labels: this.$t('pages.dashboard.months')
         },
         extraOptions: chartConfigs.purpleChartOptions,
         gradientColors: config.colors.primaryGradient,
@@ -488,7 +489,7 @@ export default {
           labels: ['JUIL', 'AOUT', 'SEP', 'OCT', 'NOV', 'DEC'],
           datasets: [
             {
-              label: 'Secteur 1',
+              label: '1',
               fill: false,
               borderColor: config.colors.orange,
               borderWidth: 2,
@@ -504,7 +505,7 @@ export default {
               data: SalarieChartData[0]
             },
             {
-              label: 'Secteur 2',
+              label: '2',
               fill: false,
               borderColor: config.colors.info,
               borderWidth: 2,
@@ -520,7 +521,7 @@ export default {
               data: SalarieChartData[1]
             },
             {
-              label: 'Secteur 3',
+              label: '3',
               fill: false,
               borderColor: config.colors.primary,
               borderWidth: 2,
@@ -573,7 +574,7 @@ export default {
       blueBarChart: {
         extraOptions: chartConfigs.barChartOptions,
         chartData: {
-          labels: ['Secteur 1', 'Secteur 2', 'Secteur 3'],
+          labels: ['1', '2', '3'],
           datasets: [
             {
               label: 'Quantité à collecter',
@@ -599,11 +600,21 @@ export default {
       return this.$rtl.isRTL;
     },
     bigLineChartCategories () {
-      return [{ name: 'Jour', icon: 'tim-icons icon-single-02' }, {
-        name: 'Semaine',
+      return [{
+        name: this.$t('pages.dashboard.tourneesPrevoirPeriodeTabsLabels.jour'),
+        icon: 'tim-icons icon-single-02'
+      },
+      {
+        name: this.$t('pages.dashboard.tourneesPrevoirPeriodeTabsLabels.semaine'),
         icon: 'tim-icons icon-gift-2'
-      }, { name: 'Mois', icon: 'tim-icons icon-tap-02' },
-      { name: 'Trimestre', icon: 'tim-icons icon-tap-02' }];
+      }, {
+        name: this.$t('pages.dashboard.tourneesPrevoirPeriodeTabsLabels.mois'),
+        icon: 'tim-icons icon-tap-02'
+      },
+      {
+        name: this.$t('pages.dashboard.tourneesPrevoirPeriodeTabsLabels.trimestre'),
+        icon: 'tim-icons icon-tap-02'
+      }];
     }
   },
   methods: {
@@ -612,9 +623,54 @@ export default {
       this.activePeriode = index;
     }
   },
+  created() {
+    tableData = tableData.map(datas => {
+      return datas.map(data => {
+        if (data.secteurO) {
+          data.secteurO = this.$t('pages.dashboard.secteur', {secteur: data.secteurO})
+        }
+        if (data.secteurD) {
+          data.secteurD = this.$t('pages.dashboard.secteur', {secteur: data.secteurD})
+        }
+        return data
+      })
+    })
+    bigChartDatasetOptions0.label = this.$t('pages.dashboard.secteur', {secteur: bigChartDatasetOptions0.label})
+    bigChartDatasetOptions1.label = this.$t('pages.dashboard.secteur', {secteur: bigChartDatasetOptions1.label})
+    bigChartDatasetOptions2.label = this.$t('pages.dashboard.secteur', {secteur: bigChartDatasetOptions2.label})
+    this.purpleLineChart.chartData.datasets = this.purpleLineChart.chartData.datasets.map(data => {
+      data.label = this.$t('pages.dashboard.secteur', {secteur: data.label})
+      return data
+    })
+    this.blueBarChart.chartData.labels = this.blueBarChart.chartData.labels.map(label => {
+      return this.$t('pages.dashboard.secteur', {secteur: label})
+    })
+    this.blueBarChart.chartData.datasets[0].label = this.$t('pages.dashboard.quandCollecter', {secteur: this.blueBarChart.chartData.datasets[0].label})
+    this.greenLineChart.chartData.labels = this.greenLineChart.chartData.labels.map(label => {
+      return this.$t('pages.dashboard.secteur', {secteur: label})
+    })
+    this.dataMvt = tableData[0]
+    this.bigLineChart = {
+        activeIndex: [0,1,2],
+        chartData: {
+          datasets: [{
+            ...bigChartDatasetOptions0,
+            data: bigChartData[0]
+          },
+          { ...bigChartDatasetOptions1,
+            data: bigChartData[1]},
+          { ...bigChartDatasetOptions2,
+            data: bigChartData[2]}],
+          labels: this.$t('pages.dashboard.months')
+        },
+        extraOptions: chartConfigs.purpleChartOptions,
+        gradientColors: config.colors.primaryGradient,
+        gradientStops: [1, 0.4, 0],
+        categories: []
+      }
+  },
   mounted () {
     this.loadTable(0);
   }
 }
 </script>
-<style></style>

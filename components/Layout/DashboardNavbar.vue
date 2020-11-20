@@ -44,7 +44,7 @@
           type="text"
           class="form-control"
           id="inlineFormInputGroup"
-          placeholder="SEARCH"
+          :placeholder="$t('components.layout.dashboardNavbar.chercher')"
         />
       </modal>
       <base-dropdown
@@ -81,14 +81,14 @@
           <p class="d-lg-none">Log out</p>
         </template>
         <li class="nav-link">
-          <a href="/user" class="nav-item dropdown-item">Profil</a>
+          <a href="#" class="nav-item dropdown-item">{{ $t('components.layout.dashboardNavbar.deconnexion') }}</a>
         </li>
         <li class="nav-link">
-          <a href="#" class="nav-item dropdown-item">Paramètres</a>
+          <a href="#" class="nav-item dropdown-item">{{ $t('components.layout.dashboardNavbar.deconnexion') }}</a>
         </li>
         <div class="dropdown-divider"></div>
         <li class="nav-link">
-          <a href="#" class="nav-item dropdown-item">Se Déconnecter</a>
+          <a href="#" class="nav-item dropdown-item">{{ $t('components.layout.dashboardNavbar.deconnexion') }}</a>
         </li>
       </base-dropdown>
     </ul>
@@ -124,10 +124,10 @@ export default {
       searchModalVisible: false,
       searchQuery: '',
       notifications: [
-        "Camion E03 - Crevaison - En dépannage",
-        "Camion Large Hooper - Benne - HS",
-        "Ar01 - Compteur - Terminé",
-        "Ar07 - Surcharge - Pris en charge"
+        "CB E03 " + this.$t('pages.alertes.pannes_values.crevaison'),
+        "Ar01#000001 " + this.$t('pages.alertes.pannes_values.termine'),
+        "CL Hooper16 " + this.$t('pages.alertes.pannes_values.hs'),
+        "Ar07#05301 " + this.$t('pages.alertes.pannes_values.maintenance')
       ]
     };
   },

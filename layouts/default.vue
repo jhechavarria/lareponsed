@@ -7,10 +7,10 @@
       :title="$t('sidebar.title')"
     >
       <template slot="links">
-        <label class="ml-3 mb-n2 red">Agence</label>
+        <label class="ml-3 mb-n2 red">{{ $t('layouts.default.sidebar.groups.agency') }}</label>
         <sidebar-item
           :link="{
-            name: $t('sidebar.dashboard'),
+            name: $t('layouts.default.sidebar.dashboard'),
             icon: 'tim-icons icon-chart-pie-36',
             path: '/'
           }"
@@ -19,18 +19,18 @@
 
         <sidebar-item
           :link="{
-            name: $t('sidebar.notifications'),
+            name: $t('layouts.default.sidebar.alertes'),
             icon: 'tim-icons icon-bell-55',
             path: '/alertes'
           }"
         >
         </sidebar-item>
 
-      <label class="ml-3 mt-2 mb-n2 red">Equipe</label>
+      <label class="ml-3 mt-2 mb-n2 red">{{ $t('layouts.default.sidebar.groups.equipe') }}</label>
 
         <sidebar-item
           :link="{
-            name: $t('sidebar.teams'),
+            name: $t('layouts.default.sidebar.equipes'),
             icon: 'tim-icons icon-bullet-list-67',
             path: '/equipes'
           }"
@@ -38,7 +38,7 @@
 
          <sidebar-item
           :link="{
-            name: $t('sidebar.regularTables'),
+            name: $t('layouts.default.sidebar.feuilleDeRoute'),
             icon: 'tim-icons icon-delivery-fast',
             path: '/feuilles'
           }"
@@ -46,18 +46,18 @@
 
         <sidebar-item
           :link="{
-            name: $t('sidebar.maps'),
+            name: $t('layouts.default.sidebar.itineraire'),
             icon: 'tim-icons icon-square-pin',
             path: '/google'
           }"
         >
         </sidebar-item>
 
-         <label class="ml-3 mt-2 mb-n2 red">Utilisateur</label>
+         <label class="ml-3 mt-2 mb-n2 red">{{ $t('layouts.default.sidebar.groups.utilisateur') }}</label>
 
         <sidebar-item
           :link="{
-            name: $t('sidebar.userProfile'),
+            name: $t('layouts.default.sidebar.userProfile'),
             icon: 'tim-icons icon-single-02',
             path: '/user' }"
         >

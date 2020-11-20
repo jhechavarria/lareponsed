@@ -33,6 +33,7 @@
     </div>
   </nav>
 </template>
+
 <script>
 import { CollapseTransition } from 'vue2-transitions';
 

@@ -5,7 +5,7 @@
         <i class="fa fa-cog fa-2x" @click="toggleDropDown"> </i>
       </a>
       <ul class="dropdown-menu" :class="{ show: isOpen }">
-        <li class="header-title">Couleur du fond barre de navigation</li>
+        <li class="header-title">{{ $t('components.layout.sidebarSharePlugin.title') }}</li>
         <li class="adjustments-line">
           <a class="switch-trigger background-color">
             <div class="badge-colors text-center">
@@ -23,9 +23,9 @@
         </li>
         <li class="adjustments-line">
           <div class="togglebutton switch-change-color mt-3">
-            <span class="label-switch">Mode clair</span>
+            <span class="label-switch">{{ $t('components.layout.sidebarSharePlugin.modeClair') }}</span>
             <base-switch v-model="darkMode" @input="toggleMode"></base-switch>
-            <span class="label-switch label-right">Mode sombre</span>
+            <span class="label-switch label-right">{{ $t('components.layout.sidebarSharePlugin.modeSombre') }}</span>
           </div>
         </li>
         <li></li>
