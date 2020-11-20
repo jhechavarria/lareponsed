@@ -14,7 +14,7 @@ module.exports = {
         },
         "sidebarSharePlugin": {
           "title": "COULEUR DU THEME",
-          "modeClair": "Moed clair",
+          "modeClair": "Mode clair",
           "modeSombre": "Mode sombre"
         }
       }
@@ -26,7 +26,7 @@ module.exports = {
           "shortTitle": "GD",
           "groups": {
             "agency": "Agence",
-            "equipe": "Equipes",
+            "equipe": "Equipe",
             "utilisateur": "Utilisateurs"
           },
           "dashboard": "Tableau de Bord",
