@@ -1,12 +1,12 @@
 <template>
   <card>
-    <h5 slot="header" class="title">Edit Profile</h5>
+    <h5 slot="header" class="title"> {{ $t('user_profile.edit_profile_form.edit_profile') }}</h5>
     <form @submit.prevent="updateProfile">
       <div class="row">
         <div class="col-md-5">
           <base-input
             type="text"
-            label="Société"
+            :label="$t('user_profile.edit_profile_form.edit_profile_var.societe')"
             :disabled="false"
             placeholder="Company"
             v-model="user.company"
@@ -16,7 +16,7 @@
         <div class="col-md-3">
           <base-input
             type="text"
-            label="Nom d'utilisateur"
+            :label="$t('user_profile.edit_profile_form.edit_profile_var.nom_d_utilisateur')"
             placeholder="Username"
             v-model="user.username"
           >
@@ -25,7 +25,7 @@
         <div class="col-md-4">
           <base-input
             type="email"
-            label="Email"
+            :label="$t('user_profile.edit_profile_form.edit_profile_var.email')"
             placeholder="mike@email.fr"
             v-model="user.email"
           >
@@ -37,7 +37,7 @@
         <div class="col-md-6">
           <base-input
             type="text"
-            label="Prenom"
+            :label="$t('user_profile.edit_profile_form.edit_profile_var.prenom')"
             placeholder="First Name"
             v-model="user.firstName"
           >
@@ -46,7 +46,7 @@
         <div class="col-md-6">
           <base-input
             type="text"
-            label="NOM"
+            :label="$t('user_profile.edit_profile_form.edit_profile_var.nom')"
             placeholder="Last Name"
             v-model="user.lastName"
           >
@@ -58,7 +58,7 @@
         <div class="col-md-12">
           <base-input
             type="text"
-            label="Adresse"
+            :label="$t('user_profile.edit_profile_form.edit_profile_var.adresse')"
             placeholder="Home Address"
             v-model="user.address"
           >
@@ -70,7 +70,7 @@
         <div class="col-md-4">
           <base-input
             type="text"
-            label="Ville"
+            :label="$t('user_profile.edit_profile_form.edit_profile_var.ville')"
             placeholder="City"
             v-model="user.city"
           >
@@ -87,7 +87,7 @@
         </div>
         <div class="col-md-4">
           <base-input
-            label="Code Postal"
+            :label="$t('user_profile.edit_profile_form.edit_profile_var.code_postal')"
             placeholder="ZIP Code"
             v-model="user.postalCode"
           >
@@ -97,7 +97,7 @@
 
       <div class="row">
         <div class="col-md-12">
-          <base-input label="About Me">
+          <base-input :label="$t('user_profile.edit_profile_form.edit_profile_var.a_propos_de_moi')">
             <textarea
               class="form-control"
               placeholder="ZIP Code"
@@ -109,7 +109,7 @@
       </div>
 
       <base-button native-type="submit" type="primary" class="btn-fill">
-        Enregistrer
+        {{ $t('user_profile.edit_profile_form.enregistrer') }}
       </base-button>
     </form>
   </card>

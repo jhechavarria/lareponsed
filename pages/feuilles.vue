@@ -6,25 +6,25 @@
     <div class="row">
       <div class="col-sm-6 col-md-3">
         <card>
-          <h4 slot="header" class="card-title text-center">Remplissage de la benne</h4>
+          <h4 slot="header" class="card-title text-center">{{ $t('pages.feuilles.remplissage_de_la_benne')}}</h4>
           <h1 align="center">75%</h1>
         </card>
       </div>
       <div class="col-sm-6 col-md-3">
         <card>
-          <h4 slot="header" class="card-title text-center">Silos récupérés</h4>
+          <h4 slot="header" class="card-title text-center">{{ $t('pages.feuilles.silos_recuperes')}}</h4>
           <h1 align="center">3/5</h1>
         </card>
       </div>
       <div class="col-sm-6 col-md-3">
         <card>
-          <h4 slot="header" class="card-title text-center">Trajet restant</h4>
+          <h4 slot="header" class="card-title text-center">{{ $t('pages.feuilles.trajet_restant')}}</h4>
           <h1 align="center">3 Km</h1>
         </card>
       </div>
       <div class="col-sm-6 col-md-3">
         <card>
-          <h4 slot="header" class="card-title text-center">Durée estimée</h4>
+          <h4 slot="header" class="card-title text-center">{{ $t('pages.feuilles.duree_estimee')}}</h4>
           <h1 align="center">30 min</h1>
         </card>
       </div>
@@ -32,32 +32,32 @@
     <div class="row">
       <div class="col-md-6">
         <card>
-          <h4 slot="header" class="card-title">Itinéraire</h4>
+          <h4 slot="header" class="card-title">{{ $t('pages.feuilles.itineraire')}}</h4>
           <div style="height: 350px" id="map"></div>
         </card>
       </div>
       <div class="col-md-6">
         <card card-body-classes="table-full-width">
-          <h4 slot="header" class="card-title">Silos</h4>
+          <h4 slot="header" class="card-title">{{ $t('pages.feuilles.silos')}}</h4>
           <el-table :data="tableData">
             <el-table-column
               sortable
-              label="Silo"
+              :label="$t('pages.feuilles.silos_labels.silo')"
               property="name"
             ></el-table-column>
             <el-table-column
               sortable
-              label="Remplissage"
+              :label="$t('pages.feuilles.silos_labels.remplissage')"
               property="full"
             ></el-table-column>
             <el-table-column
               sortable
-              label="Adresse"
+              :label="$t('pages.feuilles.silos_labels.adresse')"
               property="address"
             ></el-table-column>
             <el-table-column
               sortable
-              label="Etat"
+              :label="$t('pages.feuilles.silos_labels.etat')"
               property="done"
             ></el-table-column>
           </el-table>
@@ -67,7 +67,7 @@
     <div class="row">
       <div class="col-12">
         <card>
-          <h4 slot="header" class="card-title">Actu Tournée</h4>
+          <h4 slot="header" class="card-title">{{ $t('pages.feuilles.actu_tournée')}}</h4>
           <base-alert type="info">
             <span>
               <b>Info - </b> Début de la tournée #2020111801
@@ -115,31 +115,31 @@ export default {
           name: 'Ar05#0007',
           address: '103 rue John Doe - 69005',
           full: '80%',
-          done: 'Vidé'
+          done: this.$t('pages.feuilles.feuilles_var.vide'),
         },
         {
           name: 'Ar05#0015',
           address: '20 rue Dufrène - 69005',
           full: '78%',
-          done: 'Vidé'
+          done: this.$t('pages.feuilles.feuilles_var.vide'),
         },
         {
           name: 'Ar05#0031',
           address: '1 rue du Caire - 69005',
           full: '91%',
-          done: 'Vidé'
+          done: this.$t('pages.feuilles.feuilles_var.vide'),
         },
         {
           name: 'Ar05#0001',
           address: '12 rue Juliot - 69005',
           full: '80%',
-          done: 'Planifiée'
+          done: this.$t('pages.feuilles.feuilles_var.planifie'),
         },
         {
           name: 'Ar05#0014',
           address: '3 rue St. Pierre - 69005',
           full: '71%',
-          done: 'Annulé'
+          done: this.$t('pages.feuilles.feuilles_var.annule'),
         },
       ]
     };
