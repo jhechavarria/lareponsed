@@ -12,7 +12,7 @@
           :link="{
             name: $t('layouts.default.sidebar.dashboard'),
             icon: 'tim-icons icon-chart-pie-36',
-            path: '/'
+            path: localePath('/')
           }"
         >
         </sidebar-item>
@@ -21,7 +21,7 @@
           :link="{
             name: $t('layouts.default.sidebar.alertes'),
             icon: 'tim-icons icon-bell-55',
-            path: '/alertes'
+            path: localePath('/alertes')
           }"
         >
         </sidebar-item>
@@ -32,7 +32,7 @@
           :link="{
             name: $t('layouts.default.sidebar.equipes'),
             icon: 'tim-icons icon-bullet-list-67',
-            path: '/equipes'
+            path: localePath('/equipes')
           }"
         ></sidebar-item>
 
@@ -40,7 +40,7 @@
           :link="{
             name: $t('layouts.default.sidebar.feuilleDeRoute'),
             icon: 'tim-icons icon-delivery-fast',
-            path: '/feuilles'
+            path: localePath('/feuilles')
           }"
         ></sidebar-item>
 
@@ -48,7 +48,7 @@
           :link="{
             name: $t('layouts.default.sidebar.itineraire'),
             icon: 'tim-icons icon-square-pin',
-            path: '/google'
+            path: localePath('/google')
           }"
         >
         </sidebar-item>
@@ -59,7 +59,8 @@
           :link="{
             name: $t('layouts.default.sidebar.userProfile'),
             icon: 'tim-icons icon-single-02',
-            path: '/user' }"
+            path: localePath('/user')
+            }"
         >
         </sidebar-item>
 

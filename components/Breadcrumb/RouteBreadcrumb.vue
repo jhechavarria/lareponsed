@@ -6,7 +6,7 @@
       style="display:inline-block"
     >
       <nuxt-link
-        :to="{ name: route.name }"
+        :to="localePath(route.name)"
         v-if="index < $route.matched.length - 1"
         class="breadcrumb-link"
       >
