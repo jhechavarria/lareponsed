@@ -76,10 +76,11 @@ module.exports = {
     },
     "dashboard": {
       "months": ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
+      "months2" : ['JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
       "quandCollecter": "Amount to collect",
-      "totalParSecteur": "Total quantity per sector",
+      "totalParSecteur": "Total quantity per area",
       "collectes": "Collections",
-      "secteur": "Sector {secteur}",
+      "secteur": "Area {secteur}",
       "effectifNecessairesMois": "Workforce Required Per Month",
       "nombreSalaries": "Number of employees",
       "predictions": "Predictions",
@@ -92,10 +93,13 @@ module.exports = {
         "trimestre": "Trimester",
       },
       "tourneesPrevoirPeriodeLabels": {
-        "secteurOrigine": "Original sector",
-        "secteurDestination": "Destination sector",
+        "secteurOrigine": "Original area",
+        "secteurDestination": "Destination area",
         "type": "Type",
-        "nombre": "Number"
+        "nombre": "Number",
+        "tourneesPrevoirPeriodeTabs_var":{
+          "effectif" : "Workforce"
+        },
       },
       "variationEffectifs": "Change in headcount",
       "variationEffectifsLabels": {
@@ -139,6 +143,13 @@ module.exports = {
         "etat" : "Status"
       },
       "actu_tournée" : "Tour Info",
+      "actu_tournée_var" : {
+        "debut_tour" : "Tour started",
+        "maj_tour" : "Itinerary uptated",
+        "info" : "Info",
+        "silo_vide" : "Silo emptied",
+        "route_baree" : "Closed road"
+      },
       "feuilles_var" : {
         "vide" : "Emptied",
         "planifie" : "Planned",

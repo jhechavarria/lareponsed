@@ -70,22 +70,22 @@
           <h4 slot="header" class="card-title">{{ $t('pages.feuilles.actu_tournée')}}</h4>
           <base-alert type="info">
             <span>
-              <b>Info - </b> Début de la tournée #2020111801
+              <b>{{ $t('pages.feuilles.actu_tournée_var.info') }} - </b> {{ $t('pages.feuilles.actu_tournée_var.debut_tour') }} #2020111801
             </span>
           </base-alert>
           <base-alert type="info">
             <span>
-              <b>Info - </b> Mise à jour de l'itinéraire
+              <b>{{ $t('pages.feuilles.actu_tournée_var.info') }} - </b> {{ $t('pages.feuilles.actu_tournée_var.maj_tour')}}
             </span>
           </base-alert>
           <base-alert type="success">
             <span>
-              <b>Silo vidé (Ar05#0015) - </b> 20 rue Dufrène - 69005
+              <b>{{ $t('pages.feuilles.actu_tournée_var.silo_vide') }} (Ar05#0015) - </b> 20 rue Dufrène - 69005
             </span>
           </base-alert>
           <base-alert type="warning">
             <span>
-              <b>Route barée -</b> 3 rue St. Pierre - 69005
+              <b>{{ $t('pages.feuilles.actu_tournée_var.route_baree') }} -</b> 3 rue St. Pierre - 69005
             </span>
           </base-alert>
         </card>

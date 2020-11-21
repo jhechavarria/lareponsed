@@ -313,7 +313,7 @@ let tableData = [
           id: 1,
           secteurO: '1',
           secteurD: '3',
-          type: 'Effectif',
+          type: 'effectif',
           nb: '1'
         }
       ],
@@ -486,7 +486,7 @@ export default {
       purpleLineChart: {
         extraOptions: chartConfigs.SalarieChartOptions,
         chartData: {
-          labels: ['JUIL', 'AOUT', 'SEP', 'OCT', 'NOV', 'DEC'],
+          labels: this.$t('pages.dashboard.months2'),
           datasets: [
             {
               label: '1',

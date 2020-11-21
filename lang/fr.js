@@ -76,6 +76,7 @@ module.exports = {
       },
       "dashboard": {
         "months": ['JAN', 'FEV', 'MAR', 'AVR', 'MAI', 'JUIN', 'JUIL', 'AOUT', 'SEP', 'OCT', 'NOV', 'DEC'],
+        "months2" : ['JUIL', 'AOUT', 'SEP', 'OCT', 'NOV', 'DEC'],
         "quandCollecter": "Quantité à collecter",
         "totalParSecteur": "Quantité totale par secteur",
         "collectes": "Collectes",
@@ -95,7 +96,10 @@ module.exports = {
           "secteurOrigine": "Secteur origine",
           "secteurDestination": "Secteur destination",
           "type": "Type",
-          "nombre": "Nombre"
+          "nombre": "Nombre",
+          "tournee_var" : {
+            "effectif" : "effectiffff"
+          }
         },
         "variationEffectifs": "Variation des effectifs",
         "variationEffectifsLabels": {
@@ -139,11 +143,18 @@ module.exports = {
           "etat" : "Etat"
         },
         "actu_tournée" : "Actu Tournée",
+        "actu_tournée_var" : {
+          "debut_tour" : "Début de la tournée",
+          "maj_tour" : "Mise à jour de l'itinérairer",
+          "info" : "Info",
+          "silo_vide" : "Silo vidé",
+          "route_baree" : "Route barée"
+        },
         "feuilles_var" : {
           "vide" : "Vidé",
           "planifie" : "Planifié",
           "annule" : "Annulé"
-        }
+        },
       }
     },
       "user_profile": {
