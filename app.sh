@@ -12,4 +12,8 @@
 
 yarn
 
-yarn dev --hostname 0.0.0.0 -p 80
+yarn generate
+
+yarn build
+
+yarn start --hostname 0.0.0.0 -p 80
