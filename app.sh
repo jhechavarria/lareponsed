@@ -12,8 +12,6 @@
 
 yarn
 
-yarn generate
-
-yarn build
+yarn generate --fail-on-error
 
 yarn start --hostname 0.0.0.0 -p 80
