@@ -97,9 +97,11 @@ module.exports = {
         "secteurDestination": "Destination area",
         "type": "Type",
         "nombre": "Number",
-        "tourneesPrevoirPeriodeTabs_var":{
-          "effectif" : "Workforce"
-        },
+        "tournee_var" : {
+          "effectif" : "Workforce",
+          "benne_30t" : "Dump Truck 30T",
+          "benne_40t" : "Dump Truck 40T"
+        }
       },
       "variationEffectifs": "Change in headcount",
       "variationEffectifsLabels": {

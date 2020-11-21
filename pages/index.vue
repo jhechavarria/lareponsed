@@ -322,35 +322,35 @@ let tableData = [
           id: 1,
           secteurO: '2',
           secteurD: '3',
-          type: 'Benne 40T',
+          type: 'benne_40t',
           nb: '1'
         },
         {
           id: 2,
           secteurO: '3',
           secteurD: '1',
-          type: 'Effectif',
+          type: 'effectif',
           nb: '2'
         },
         {
           id: 3,
           secteurO: '2',
           secteurD: '3',
-          type: 'Benne 30T',
+          type: 'benne_30t',
           nb: '1'
         },
         {
           id: 4,
           secteurO: '3',
           secteurD: '1',
-          type: 'Benne 40T',
+          type: 'benne_40t',
           nb: '1'
         },
         {
           id: 5,
           secteurO: '3',
           secteurD: '2',
-          type: 'Effectif',
+          type: 'effectif',
           nb: '3'
         }  
       ],
@@ -359,21 +359,21 @@ let tableData = [
           id: 1,
           secteurO: '2',
           secteurD: '3',
-          type: 'Effectif',
+          type: 'effectif',
           nb: '4'
         },
         {
           id: 2,
           secteurO: '2',
           secteurD: '3',
-          type: 'Benne 40T',
+          type: 'benne_40t',
           nb: '1'
         },
         {
           id: 3,
           secteurO: '1',
           secteurD: '2',
-          type: 'Effectif',
+          type: 'effectif',
           nb: '1'
         }     
       ],
@@ -382,28 +382,28 @@ let tableData = [
           id: 1,
           secteurO: '1',
           secteurD: '3',
-          type: 'Effectif',
+          type: 'effectif',
           nb: '1'
         },
         {
           id: 2,
           secteurO: '2',
           secteurD: '3',
-          type: 'Benne 40T',
+          type: 'benne_40t',
           nb: '1'
         },
         {
           id: 3,
           secteurO: '2',
           secteurD: '1',
-          type: 'Benne 30T',
+          type: 'benne_30t',
           nb: '1'
         },
         {
           id: 4,
           secteurO: '2',
           secteurD: '3',
-          type: 'Effectif',
+          type: 'effectif',
           nb: '2'
         }
       ]      
@@ -634,6 +634,7 @@ export default {
           let secteur = data.secteurD.split(' ')
           data.secteurD = this.$t('pages.dashboard.secteur', {secteur: secteur[secteur.length - 1]})
         }
+         data.type = this.$t('pages.dashboard.tourneesPrevoirPeriodeLabels.tournee_var.'+data.type)
         return data
       })
     })

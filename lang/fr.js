@@ -98,7 +98,9 @@ module.exports = {
           "type": "Type",
           "nombre": "Nombre",
           "tournee_var" : {
-            "effectif" : "effectiffff"
+            "effectif" : "Effectif",
+            "benne_30t" : "Benne 30T",
+            "benne_40t" : "Bennes 40T"
           }
         },
         "variationEffectifs": "Variation des effectifs",
