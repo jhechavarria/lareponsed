@@ -313,7 +313,8 @@ let tableData = [
           id: 1,
           secteurO: '1',
           secteurD: '3',
-          type: 'effectif',
+          label: 'effectif',
+          type: '',
           nb: '1'
         }
       ],
@@ -322,35 +323,40 @@ let tableData = [
           id: 1,
           secteurO: '2',
           secteurD: '3',
-          type: 'benne_40t',
+          label: 'benne_40t',
+          type: '',
           nb: '1'
         },
         {
           id: 2,
           secteurO: '3',
           secteurD: '1',
-          type: 'effectif',
+          label: 'effectif',
+          type: '',
           nb: '2'
         },
         {
           id: 3,
           secteurO: '2',
           secteurD: '3',
-          type: 'benne_30t',
+          label: 'benne_30t',
+          type: '',
           nb: '1'
         },
         {
           id: 4,
           secteurO: '3',
           secteurD: '1',
-          type: 'benne_40t',
+          label: 'benne_40t',
+          type: '',
           nb: '1'
         },
         {
           id: 5,
           secteurO: '3',
           secteurD: '2',
-          type: 'effectif',
+          label: 'effectif',
+          type: '',
           nb: '3'
         }  
       ],
@@ -359,21 +365,24 @@ let tableData = [
           id: 1,
           secteurO: '2',
           secteurD: '3',
-          type: 'effectif',
+          label: 'effectif',
+          type: '',
           nb: '4'
         },
         {
           id: 2,
           secteurO: '2',
           secteurD: '3',
-          type: 'benne_40t',
+          label: 'benne_40t',
+          type: '',
           nb: '1'
         },
         {
           id: 3,
           secteurO: '1',
           secteurD: '2',
-          type: 'effectif',
+          label: 'effectif',
+          type: '',
           nb: '1'
         }     
       ],
@@ -382,28 +391,32 @@ let tableData = [
           id: 1,
           secteurO: '1',
           secteurD: '3',
-          type: 'effectif',
+          label: 'effectif',
+          type: '',
           nb: '1'
         },
         {
           id: 2,
           secteurO: '2',
           secteurD: '3',
-          type: 'benne_40t',
+          label: 'benne_40t',
+          type: '',
           nb: '1'
         },
         {
           id: 3,
           secteurO: '2',
           secteurD: '1',
-          type: 'benne_30t',
+          label: 'benne_30t',
+          type: '',
           nb: '1'
         },
         {
           id: 4,
           secteurO: '2',
           secteurD: '3',
-          type: 'effectif',
+          label: 'effectif',
+          type: '',
           nb: '2'
         }
       ]      
@@ -634,7 +647,7 @@ export default {
           let secteur = data.secteurD.split(' ')
           data.secteurD = this.$t('pages.dashboard.secteur', {secteur: secteur[secteur.length - 1]})
         }
-         data.type = this.$t('pages.dashboard.tourneesPrevoirPeriodeLabels.tournee_var.'+data.type)
+         data.type = this.$t('pages.dashboard.tourneesPrevoirPeriodeLabels.tournee_var.'+data.label)
         return data
       })
     })
